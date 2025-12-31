@@ -6,7 +6,7 @@ import { hasChanged, hasValue } from '../../../utils/pdfFilters';
 
 export const ForensicDetails: React.FC<{ data: FormData }> = ({ data }) => {
   // Verifica se há qualquer dado preenchido na seção
-  const hasAnyData = [
+  const fields: Array<keyof FormData> = [
     'rigidez',
     'hipotermia',
     'tempoMorte',
@@ -21,7 +21,8 @@ export const ForensicDetails: React.FC<{ data: FormData }> = ({ data }) => {
     'medidasContraforenses',
     'descricaoMaterialPericia',
     'lesoes'
-  ].some(field => hasChanged(data[field], typeof data[field]));
+  ];
+  const hasAnyData = fields.some(field => hasChanged(data[field], typeof data[field]));
 
   // Se não houver dados preenchidos, não renderiza a seção
   if (!hasAnyData) {

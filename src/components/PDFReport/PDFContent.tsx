@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from '@react-pdf/renderer';
+import { View } from '@react-pdf/renderer';
 import { FormData } from '../../types';
 import { styles } from './styles';
 import { filterEmptyValues } from '../../utils/pdfFilters';
@@ -22,13 +22,14 @@ import {
 interface PDFContentProps {
   data: FormData;
   wrap?: boolean;
+  page?: string;
 }
 
 const PDFContent: React.FC<PDFContentProps> = ({ data, wrap = false }) => {
-  const filteredData = filterEmptyValues(data);
+  const filteredData = filterEmptyValues(data as Record<string, never>);
 
   return (
-    <View style={[styles.section, wrap && styles.wrap]}>
+    <View style={wrap ? [styles.section, styles.wrap] : styles.section}>
       <PreliminaryInfo data={filteredData} />
       <TeamInfo data={filteredData} />
       <WeatherInfo data={filteredData} />

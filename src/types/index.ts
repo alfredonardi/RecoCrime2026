@@ -263,12 +263,89 @@ export interface FormData {
   descricaoCondicoesRestricao?: string;
   descricaoInstrumentosRestricao?: string;
 
-  [key: string]: any;
+  // Communication and events fields
+  comunicacaoDP?: string;
+  comunicacaoDPTime?: string;
+  comunicacaoDHPP?: string;
+  comunicacaoDHPPTime?: string;
+  chegadaPM?: string;
+  chegadaPMTime?: string;
+  deslocamentoEquipe?: string;
+  deslocamentoEquipeTime?: string;
+  chegadaEquipe?: string;
+  chegadaEquipeTime?: string;
+  liberacaoLocal?: string;
+  liberacaoLocalTime?: string;
+  terminoTrabalho?: string;
+  terminoTrabalhoTime?: string;
+
+  // Address and location fields
+  logradouro?: string;
+  numero?: string;
+  bairro?: string;
+  cidade?: string;
+
+  // Additional description fields
+  descricaoDesviosConduta?: string;
+  descricaoAcidentesGeograficos?: string;
+  descricaoAnimaisLocal?: string;
+  descricaoEstabelecimentos?: string;
+  descricaoMaterialLeitura?: string;
+  descricaoObjetosCena?: string;
+  descricaoObjetosOutrosComodos?: string;
+  descricaoPessoasPresentes?: string;
+  descricaoVestigiosBiologicos?: string;
+  descricaoVestigiosDisparo?: string;
+  descricaoVestigiosSangue?: string;
+
+  // Illumination and infrastructure fields
+  tipoIluminacao?: string;
+  fonteIluminacao?: string;
+  viasAcessoPavimentada?: boolean;
+  viasAcessoNaoPavimentada?: boolean;
+  observacoesViasAcesso?: string;
+
+  // Additional specification fields
+  especificacaoTipoLocal?: string;
+  especificacaoTipoDocumento?: string;
+  especificacaoTipoDocumentoResgate?: string;
+  especificacaoTipoResgate?: string;
+  especificacaoTipoVeiculo?: string;
+
+  // Rescue and response fields
+  tipoResgate?: string;
+  tipoDocumentoResgate?: string;
+  numeroDocumentoResgate?: string;
+  tipoVtrResgate?: string;
+  vtrNumeroResgate?: string;
+  vtrNumero?: string;
+  tipoVtrNumero?: string;
+  encarregado?: string;
+
+  // Vehicle additional fields
+  placaVeiculo?: string;
+  veiculoTrancado?: boolean;
+  veiculoDanificado?: boolean;
+
+  // Additional specification fields
+  especificarOutraPosicao?: string;
 }
+
+// Type-safe form value type
+export type FormValue =
+  | string
+  | number
+  | boolean
+  | string[]
+  | Array<{ local?: string; descricao?: string }>
+  | Array<{ tipo?: string; descricao?: string }>
+  | Array<{ descricao?: string }>
+  | Array<{ nome?: string; contato?: string; observacoes?: string }>
+  | undefined;
 
 export interface FormSectionProps {
   data: Partial<FormData>;
-  onChange: (field: string, value: any) => void;
+  onChange: (field: keyof FormData, value: FormValue) => void;
 }
 
 // Re-export all types from other type files

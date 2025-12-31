@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FormData } from '../types';
+import { FormData, FormValue } from '../types';
 
 const STORAGE_KEY = 'reco_form_data';
 
@@ -34,7 +34,7 @@ export const useForm = () => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
   }, [formData]);
 
-  const handleChange = (field: string, value: any) => {
+  const handleChange = (field: keyof FormData, value: FormValue) => {
     setFormData(prev => ({
       ...prev,
       [field]: value

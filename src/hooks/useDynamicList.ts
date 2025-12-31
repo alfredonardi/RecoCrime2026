@@ -1,21 +1,20 @@
 import { useState, useCallback } from 'react';
 
-interface DynamicItem {
-  [key: string]: any;
-}
+// Generic type for dynamic list items - can be extended with specific properties
+export type DynamicItem = Record<string, string | number | boolean | undefined>;
 
-export const useDynamicList = (initialItems: DynamicItem[] = []) => {
-  const [items, setItems] = useState<DynamicItem[]>(initialItems);
+export const useDynamicList = <T extends DynamicItem>(initialItems: T[] = []) => {
+  const [items, setItems] = useState<T[]>(initialItems);
 
   const addItem = useCallback(() => {
-    setItems(prevItems => [...prevItems, {}]);
+    setItems(prevItems => [...prevItems, {} as T]);
   }, []);
 
   const removeItem = useCallback((index: number) => {
     setItems(prevItems => prevItems.filter((_, i) => i !== index));
   }, []);
 
-  const updateItem = useCallback((index: number, field: string, value: any) => {
+  const updateItem = useCallback((index: number, field: keyof T, value: string | number | boolean | undefined) => {
     setItems(prevItems => {
       const newItems = [...prevItems];
       newItems[index] = { ...newItems[index], [field]: value };

@@ -6,7 +6,7 @@ import { hasChanged } from '../../../utils/pdfFilters';
 
 export const VehicleInfo: React.FC<{ data: Partial<FormData> }> = ({ data }) => {
   // Verifica se há qualquer dado preenchido na seção
-  const hasAnyData = [
+  const fields: Array<keyof FormData> = [
     'localCorpo',
     'tipoVeiculo',
     'marcaVeiculo',
@@ -18,7 +18,8 @@ export const VehicleInfo: React.FC<{ data: Partial<FormData> }> = ({ data }) => 
     'numeroIdentificacao',
     'motorLigado',
     'danosVeiculo'
-  ].some(field => hasChanged(data[field], typeof data[field]));
+  ];
+  const hasAnyData = fields.some(field => hasChanged(data[field], typeof data[field]));
 
   if (!hasAnyData) {
     return null;
