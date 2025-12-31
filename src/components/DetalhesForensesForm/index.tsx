@@ -8,7 +8,7 @@ import SinaisViolenciaSection from './sections/SinaisViolenciaSection';
 import CondicoesRestricaoSection from './sections/CondicoesRestricaoSection';
 import MedidasContraforensesSection from '../LocalImediatoInternoForm/MedidasContraforensesSection';
 import ColetaMaterialSection from './sections/ColetaMaterialSection';
-import LesoesSection from './sections/LesoesSection';
+import LesoesSection from '../shared/sections/LesoesSection';
 
 const DetalhesForensesForm: React.FC<FormSectionProps> = ({ data, onChange }) => {
   return (

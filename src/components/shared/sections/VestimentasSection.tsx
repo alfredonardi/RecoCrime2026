@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormSectionProps } from '../../../types';
-import DynamicList from '../../shared/DynamicList';
+import DynamicList from '../DynamicList';
 
 const VestimentasSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
   return (

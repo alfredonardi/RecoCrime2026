@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormSectionProps } from '../../types';
-import TatuagensDeformidadesSection from './sections/TatuagensDeformidadesSection';
+import TatuagensDeformidadesSection from '../shared/sections/TatuagensDeformidadesSection';
 import VestimentasAderecosSection from './sections/VestimentasAderecosSection';
 
 const IdentificadoresExternosForm: React.FC<FormSectionProps> = ({ data, onChange }) => {
