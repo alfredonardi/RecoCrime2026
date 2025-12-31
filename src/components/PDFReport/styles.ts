@@ -1,0 +1,70 @@
+import { StyleSheet } from '@react-pdf/renderer';
+
+export const styles = StyleSheet.create({
+    section: {
+        margin: '6pt',
+        padding: '6pt',
+        flexGrow: 1,
+        width: '100%',
+    },
+    wrap: {
+        flexWrap: 'wrap',
+    },
+    sectionTitle: {
+        fontSize: 11,
+        fontFamily: 'Helvetica-Bold',
+        marginBottom: '6pt',
+        marginTop: '12pt',
+        backgroundColor: '#f5f5f5',
+        padding: '6pt',
+        breakAfter: 'avoid',
+        width: '100%',
+    },
+    firstSectionTitle: {
+        fontSize: 11,
+        fontFamily: 'Helvetica-Bold',
+        marginBottom: '6pt',
+        backgroundColor: '#f5f5f5',
+        padding: '6pt',
+        breakAfter: 'avoid',
+        width: '100%',
+    },
+    subsectionTitle: {
+        fontSize: 10,
+        fontFamily: 'Helvetica-Bold',
+        marginTop: '8pt',
+        marginBottom: '3pt',
+    },
+    row: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        marginBottom: '3pt',
+        minHeight: '12pt',
+        breakInside: 'avoid',
+        width: '100%',
+        paddingRight: '12pt',
+        alignItems: 'flex-start',
+    },
+    label: {
+        width: '35%',
+        fontSize: 9,
+        fontFamily: 'Helvetica-Bold',
+        paddingRight: '6pt',
+        position: 'absolute',
+        left: 0,
+    },
+    value: {
+        width: '65%',
+        fontSize: 9,
+        fontFamily: 'Helvetica',
+        marginLeft: '35%',
+        lineHeight: 1.3,
+    },
+    multilineValue: {
+        width: '65%',
+        fontSize: 9,
+        fontFamily: 'Helvetica',
+        marginLeft: '35%',
+        lineHeight: 1.3,
+    },
+});

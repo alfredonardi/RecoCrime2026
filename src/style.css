@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Existing styles... */
+
+.form-footer {
+  @apply mt-8 border-t pt-4;
+}
+
+.form-actions {
+  @apply flex justify-end gap-4;
+}
+
+.print-button {
+  @apply bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors;
+}
+
+@media print {
+  .form-actions {
+    display: none;
+  }
+  
+  .container {
+    max-width: none;
+    padding: 0;
+  }
+
+  body {
+    font-size: 12pt;
+  }
+
+  h1, h2 {
+    page-break-after: avoid;
+  }
+
+  fieldset {
+    page-break-inside: avoid;
+  }
+}

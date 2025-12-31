@@ -1,0 +1,51 @@
+@tailwind utilities;
+
+@layer utilities {
+  .scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .button-hover {
+    @apply transform transition-transform duration-200 hover:scale-105;
+  }
+
+  .input-focus {
+    @apply focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+  }
+
+  /* Print styles */
+  @media print {
+    .form-actions {
+      @apply hidden;
+    }
+    
+    .container {
+      @apply max-w-none p-0;
+    }
+
+    body {
+      @apply text-sm;
+    }
+
+    h1, h2 {
+      @apply break-after-avoid;
+    }
+
+    fieldset {
+      @apply break-inside-avoid;
+    }
+
+    .form-group {
+      @apply border-0 border-b border-gray-300 rounded-none shadow-none;
+    }
+  }
+}

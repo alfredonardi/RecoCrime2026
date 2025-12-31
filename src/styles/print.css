@@ -1,0 +1,25 @@
+@media print {
+  .form-actions {
+    @apply hidden;
+  }
+  
+  .container {
+    @apply max-w-none p-0;
+  }
+
+  body {
+    @apply text-sm;
+  }
+
+  h1, h2 {
+    @apply break-after-avoid;
+  }
+
+  fieldset {
+    @apply break-inside-avoid;
+  }
+
+  .form-group {
+    @apply shadow-none border-0 border-b border-gray-300 rounded-none;
+  }
+}
