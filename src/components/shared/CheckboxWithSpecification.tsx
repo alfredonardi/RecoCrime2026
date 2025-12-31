@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo, useCallback } from 'react';
 
 interface CheckboxWithSpecificationProps {
   id: string;
@@ -10,7 +10,7 @@ interface CheckboxWithSpecificationProps {
   showSpecification?: boolean;
 }
 
-const CheckboxWithSpecification: React.FC<CheckboxWithSpecificationProps> = ({
+const CheckboxWithSpecification: React.FC<CheckboxWithSpecificationProps> = memo(({
   id,
   label,
   checked,
@@ -19,6 +19,14 @@ const CheckboxWithSpecification: React.FC<CheckboxWithSpecificationProps> = ({
   onSpecificationChange,
   showSpecification,
 }) => {
+  const handleCheckboxChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    onChange(e.target.checked);
+  }, [onChange]);
+
+  const handleSpecificationChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    onSpecificationChange?.(e.target.value);
+  }, [onSpecificationChange]);
+
   return (
     <div className="flex items-start w-full py-2">
       <div className="flex items-start flex-1">
@@ -26,25 +34,27 @@ const CheckboxWithSpecification: React.FC<CheckboxWithSpecificationProps> = ({
           type="checkbox"
           id={id}
           checked={checked}
-          onChange={(e) => onChange(e.target.checked)}
+          onChange={handleCheckboxChange}
           className="mt-1 h-4 w-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500"
         />
         <label htmlFor={id} className="ml-2 block text-sm text-gray-700">
           {label}
         </label>
       </div>
-      
+
       {showSpecification && onSpecificationChange && (
         <input
           type="text"
           className="ml-4 flex-1 h-[42px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           placeholder="Especifique"
           value={specification || ''}
-          onChange={(e) => onSpecificationChange(e.target.value)}
+          onChange={handleSpecificationChange}
         />
       )}
     </div>
   );
-};
+});
+
+CheckboxWithSpecification.displayName = 'CheckboxWithSpecification';
 
 export default CheckboxWithSpecification;

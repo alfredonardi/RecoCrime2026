@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo, useCallback } from 'react';
 
 interface SelectOption {
   value: string;
@@ -15,7 +15,7 @@ interface SelectWithSpecificationProps {
   options: SelectOption[];
 }
 
-const SelectWithSpecification: React.FC<SelectWithSpecificationProps> = ({
+const SelectWithSpecification: React.FC<SelectWithSpecificationProps> = memo(({
   label,
   id,
   value,
@@ -24,6 +24,14 @@ const SelectWithSpecification: React.FC<SelectWithSpecificationProps> = ({
   onSpecificationChange,
   options,
 }) => {
+  const handleSelectChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
+    onChange(e.target.value);
+  }, [onChange]);
+
+  const handleSpecificationChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    onSpecificationChange(e.target.value);
+  }, [onSpecificationChange]);
+
   return (
     <div>
       <label htmlFor={id} className="block text-sm font-medium text-gray-700 mb-4">
@@ -33,7 +41,7 @@ const SelectWithSpecification: React.FC<SelectWithSpecificationProps> = ({
         id={id}
         className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         value={value}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={handleSelectChange}
       >
         <option value="">Selecione...</option>
         {options.map((option) => (
@@ -49,11 +57,13 @@ const SelectWithSpecification: React.FC<SelectWithSpecificationProps> = ({
           className="mt-2 w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           placeholder="Especifique"
           value={specificationValue}
-          onChange={(e) => onSpecificationChange(e.target.value)}
+          onChange={handleSpecificationChange}
         />
       )}
     </div>
   );
-};
+});
+
+SelectWithSpecification.displayName = 'SelectWithSpecification';
 
 export default SelectWithSpecification;

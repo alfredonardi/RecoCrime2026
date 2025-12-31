@@ -1,5 +1,8 @@
-export interface FormData {
-  // Make all fields optional
+// =============================================================================
+// PRELIMINARY INFORMATION
+// =============================================================================
+
+export interface PreliminaryInfo {
   naturezaDelito?: string;
   especificacaoNaturezaDelito?: string;
   data?: string;
@@ -7,16 +10,36 @@ export interface FormData {
   localFatos?: string;
   pontoReferencia?: string;
   tipoLocal?: string;
+  especificacaoTipoLocal?: string;
   circunscricaoPolicial?: string;
   boDP?: string;
   boDPInfo?: string;
   boDHPP?: string;
+  logradouro?: string;
+  numero?: string;
+  bairro?: string;
+  cidade?: string;
+}
+
+// =============================================================================
+// TEAM INFORMATION
+// =============================================================================
+
+export interface TeamInfo {
   delegado?: string;
   escrivao?: string;
   policiaisCivis?: string;
   perito?: string;
   fotografo?: string;
   papiloscopistas?: string;
+  encarregado?: string;
+}
+
+// =============================================================================
+// WEATHER AND ENVIRONMENT CONDITIONS
+// =============================================================================
+
+export interface WeatherConditions {
   periodo?: string;
   luz?: string;
   clima?: string;
@@ -25,32 +48,69 @@ export interface FormData {
   temperatura?: string;
   sensacaoTermica?: string;
   umidadeAr?: string;
+  tipoIluminacao?: string;
+  fonteIluminacao?: string;
+}
+
+// =============================================================================
+// SCENE PRESERVATION
+// =============================================================================
+
+export interface ScenePreservation {
   estadoVitima?: string;
   materialQueCobria?: string;
   preservadoPor?: string;
   especificacaoPreservadoPor?: string;
   responsavel?: string;
   tipoDocumento?: string;
+  especificacaoTipoDocumento?: string;
   documentoNumero?: string;
   tentativaResgate?: string;
+  tipoResgate?: string;
+  especificacaoTipoResgate?: string;
+  tipoDocumentoResgate?: string;
+  especificacaoTipoDocumentoResgate?: string;
+  numeroDocumentoResgate?: string;
+  tipoVtrResgate?: string;
+  vtrNumeroResgate?: string;
+  vtrNumero?: string;
+  tipoVtrNumero?: string;
+}
+
+// =============================================================================
+// EXTERNAL LOCATION DETAILS
+// =============================================================================
+
+export interface ExternalLocation {
   area?: string;
   perfilSocial?: string;
   iluminacaoPublica?: string;
   redeEsgoto?: string;
   pavimentacao1?: string;
   trafegoVeiculos?: string;
+  viasAcessoPavimentada?: boolean;
+  viasAcessoNaoPavimentada?: boolean;
+  observacoesViasAcesso?: string;
+
+  // Establishments
   escola?: boolean;
   bar?: boolean;
   casaNoturna?: boolean;
   religioso?: boolean;
   outroEstabelecimento?: boolean;
   especificacaoEstabelecimento?: string;
+  descricaoEstabelecimentos?: string;
+
+  // People present
   curiosos?: boolean;
   parentes?: boolean;
   vizinhos?: boolean;
   imprensa?: boolean;
   outrosPresentes?: boolean;
   outrosPresentesEspecificacao?: string;
+  descricaoPessoasPresentes?: string;
+
+  // Animals
   cachorro?: boolean;
   gato?: boolean;
   passaro?: boolean;
@@ -60,6 +120,9 @@ export interface FormData {
   necrofagos?: boolean;
   outrosAnimais?: boolean;
   outrosAnimaisNoLocal?: string;
+  descricaoAnimaisLocal?: string;
+
+  // Location specifics
   informacoesPertinentesLocalFatos?: string;
   localEncontroCorpo?: string;
   especificacaoLocalEncontroCorpo?: string;
@@ -67,6 +130,8 @@ export interface FormData {
   especificacaoPavimentacao?: string;
   tipoRelevo?: string;
   especificacaoTipoRelevo?: string;
+
+  // Geographic features
   rio?: boolean;
   lago?: boolean;
   monte?: boolean;
@@ -74,8 +139,17 @@ export interface FormData {
   corrego?: boolean;
   outrosAcidentes?: boolean;
   outrosAcidentesEspecificacao?: string;
+  descricaoAcidentesGeograficos?: string;
+
   corpoMovido?: string;
   detalhesCorpoMovido?: string;
+}
+
+// =============================================================================
+// INTERNAL LOCATION DETAILS
+// =============================================================================
+
+export interface InternalLocation {
   tipoAmbiente?: string;
   especificacaoTipoAmbiente?: string;
   tipoConstrucao?: string;
@@ -94,6 +168,8 @@ export interface FormData {
   extraInfoHabitosAlimentares?: string;
   comodoCorpo?: string;
   encontroDoCorpo?: string;
+
+  // Objects in scene
   arma?: boolean;
   drogaCena?: boolean;
   ferramenta?: boolean;
@@ -103,6 +179,9 @@ export interface FormData {
   pendrive?: boolean;
   outrosObjetosCena?: boolean;
   especificacaoOutrosObjetosCena?: string;
+  descricaoObjetosCena?: string;
+
+  // Shooting evidence
   localDisparo?: string;
   paredes?: boolean;
   teto?: boolean;
@@ -112,6 +191,9 @@ export interface FormData {
   outrosVestigios?: boolean;
   especificacaoVestigios?: string;
   vestigiosSangue?: string;
+  descricaoVestigiosDisparo?: string;
+
+  // Blood traces
   quantidadeSangue?: string;
   parede?: boolean;
   chao?: boolean;
@@ -119,6 +201,9 @@ export interface FormData {
   teto2?: boolean;
   outrosLocaisSangue?: boolean;
   especificacaoVestigiosSangue?: string;
+  descricaoVestigiosSangue?: string;
+
+  // Biological evidence
   vestigioBiologico?: string;
   cabelos?: boolean;
   pele?: boolean;
@@ -126,6 +211,9 @@ export interface FormData {
   sangueBiologico?: boolean;
   outrosBiologicos?: boolean;
   especificacaoBiologicos?: string;
+  descricaoVestigiosBiologicos?: string;
+
+  // Counter-forensic measures
   medidasContraforenses?: string;
   inutilizacaoCCTV?: boolean;
   usoLuvas?: boolean;
@@ -135,6 +223,8 @@ export interface FormData {
   alteracaoCaracteristicas?: boolean;
   outrosContraforenses?: boolean;
   especificacaoContraforenses?: string;
+
+  // Objects in other rooms
   armas?: boolean;
   drogas?: boolean;
   manchasSangue?: boolean;
@@ -144,6 +234,9 @@ export interface FormData {
   pertencesDeTerceiros1?: boolean;
   outrosObjetos?: boolean;
   especificacaoObjetosOutrosComodos?: string;
+  descricaoObjetosOutrosComodos?: string;
+
+  // Reading materials
   livros?: boolean;
   jornais?: boolean;
   revistas?: boolean;
@@ -151,13 +244,24 @@ export interface FormData {
   recreativos?: boolean;
   outrosMateriais?: boolean;
   especificacaoMaterialLeitura?: string;
+  descricaoMaterialLeitura?: string;
+
   informacoesPertinentesLocalInterno?: string;
+}
+
+// =============================================================================
+// VEHICLE INFORMATION
+// =============================================================================
+
+export interface VehicleInfo {
   localCorpo?: string;
   especificacaoLocal?: string;
   tipoVeiculo?: string;
+  especificacaoTipoVeiculo?: string;
   marcaVeiculo?: string;
   modeloVeiculo?: string;
   placa?: string;
+  placaVeiculo?: string;
   corVeiculo?: string;
   outraCor?: string;
   proprietario?: string;
@@ -166,10 +270,19 @@ export interface FormData {
   motorLigado?: string;
   danosVeiculo?: string;
   descricaoDanos?: string;
+  veiculoTrancado?: boolean;
+  veiculoDanificado?: boolean;
   acaoVitima?: string;
   descricaoAcaoVitimaOutros?: string;
   identificacaoVitima?: string;
   motivo?: string;
+}
+
+// =============================================================================
+// VICTIM IDENTIFICATION
+// =============================================================================
+
+export interface VictimIdentification {
   nome?: string;
   nomeSocial?: string;
   vulgo?: string;
@@ -188,6 +301,8 @@ export interface FormData {
   identificacaoGenero?: string;
   etnia?: string;
   especificarEtnia?: string;
+
+  // Physical characteristics
   compleicaoFisica?: string;
   especificarCompleicaoFisica?: string;
   altura?: number;
@@ -200,13 +315,8 @@ export interface FormData {
   corOlhos?: string;
   especificarCorOlhos?: string;
   caracteristicasVisiveis?: string;
-  desviosConduta?: string[];
-  descricaoOutrosDesvios?: string;
-  informacoesPertinentesDesvios?: string;
-  relacionamentoFamilia?: string;
-  descricaoOutrosRelacionamento?: string;
-  residenciaVitima?: string;
-  descricaoResidenciaVitimaOutros?: string;
+
+  // External identifiers
   tatuagensDeformidades?: Array<{
     local?: string;
     descricao?: string;
@@ -219,34 +329,82 @@ export interface FormData {
     tipo?: string;
     descricao?: string;
   }>;
+
+  // Behavior and background
+  desviosConduta?: string[];
+  descricaoOutrosDesvios?: string;
+  descricaoDesviosConduta?: string;
+  informacoesPertinentesDesvios?: string;
+  relacionamentoFamilia?: string;
+  descricaoOutrosRelacionamento?: string;
+  residenciaVitima?: string;
+  descricaoResidenciaVitimaOutros?: string;
+}
+
+// =============================================================================
+// FORENSIC DETAILS
+// =============================================================================
+
+export interface ForensicDetails {
   rigidez?: string;
   hipotermia?: string;
   tempoMorte?: string;
   posicaoCorpo?: string;
   posicaoCorpo1?: string;
   explicacaoPosicao?: string;
+  especificarOutraPosicao?: string;
+
+  // Body condition
   estadoCorpo?: string[];
   descricaoOutrosEstadoCorpo?: string;
+  descricaoEstadoCorpo?: string;
+
+  // Identification difficulty
   acoesIdentificacao?: string[];
   descricaoOutrosAcaoIdentificacao?: string;
+  descricaoAcoesIdentificacao?: string;
+
+  // Violence signs
   sinaisViolencia?: string[];
   descricaoOutrosSinaisViolencia?: string;
+  descricaoSinaisViolencia?: string;
+
+  // Restraint conditions
   condicoesRestricao?: string[];
   especificarOutrosRestVit?: string;
+  descricaoCondicoesRestricao?: string;
   instrumentosRestricao?: string[];
   especificarOutrosIu?: string;
-  materialPericia?: string[];
-  descricaoOutrosMaterial?: string;
+  descricaoInstrumentosRestricao?: string;
+
+  // Injuries
   lesoes?: Array<{
     local?: string;
     descricao?: string;
   }>;
+}
+
+// =============================================================================
+// EVIDENCE COLLECTION
+// =============================================================================
+
+export interface EvidenceCollection {
+  materialPericia?: string[];
+  descricaoOutrosMaterial?: string;
+  descricaoMaterialPericia?: string;
   apreensoes?: Array<{
     descricao?: string;
   }>;
   arrecadacoes?: Array<{
     descricao?: string;
   }>;
+}
+
+// =============================================================================
+// ADDITIONAL INFORMATION
+// =============================================================================
+
+export interface AdditionalInfo {
   testemunhas?: Array<{
     nome?: string;
     contato?: string;
@@ -254,16 +412,13 @@ export interface FormData {
   }>;
   investigacoesPreliminares?: string;
   consideracoesFinais?: string;
-  
-  // New fields for textarea versions
-  descricaoMaterialPericia?: string;
-  descricaoEstadoCorpo?: string;
-  descricaoAcoesIdentificacao?: string;
-  descricaoSinaisViolencia?: string;
-  descricaoCondicoesRestricao?: string;
-  descricaoInstrumentosRestricao?: string;
+}
 
-  // Communication and events fields
+// =============================================================================
+// COMMUNICATION AND EVENTS TIMELINE
+// =============================================================================
+
+export interface CommunicationEvents {
   comunicacaoDP?: string;
   comunicacaoDPTime?: string;
   comunicacaoDHPP?: string;
@@ -278,60 +433,30 @@ export interface FormData {
   liberacaoLocalTime?: string;
   terminoTrabalho?: string;
   terminoTrabalhoTime?: string;
-
-  // Address and location fields
-  logradouro?: string;
-  numero?: string;
-  bairro?: string;
-  cidade?: string;
-
-  // Additional description fields
-  descricaoDesviosConduta?: string;
-  descricaoAcidentesGeograficos?: string;
-  descricaoAnimaisLocal?: string;
-  descricaoEstabelecimentos?: string;
-  descricaoMaterialLeitura?: string;
-  descricaoObjetosCena?: string;
-  descricaoObjetosOutrosComodos?: string;
-  descricaoPessoasPresentes?: string;
-  descricaoVestigiosBiologicos?: string;
-  descricaoVestigiosDisparo?: string;
-  descricaoVestigiosSangue?: string;
-
-  // Illumination and infrastructure fields
-  tipoIluminacao?: string;
-  fonteIluminacao?: string;
-  viasAcessoPavimentada?: boolean;
-  viasAcessoNaoPavimentada?: boolean;
-  observacoesViasAcesso?: string;
-
-  // Additional specification fields
-  especificacaoTipoLocal?: string;
-  especificacaoTipoDocumento?: string;
-  especificacaoTipoDocumentoResgate?: string;
-  especificacaoTipoResgate?: string;
-  especificacaoTipoVeiculo?: string;
-
-  // Rescue and response fields
-  tipoResgate?: string;
-  tipoDocumentoResgate?: string;
-  numeroDocumentoResgate?: string;
-  tipoVtrResgate?: string;
-  vtrNumeroResgate?: string;
-  vtrNumero?: string;
-  tipoVtrNumero?: string;
-  encarregado?: string;
-
-  // Vehicle additional fields
-  placaVeiculo?: string;
-  veiculoTrancado?: boolean;
-  veiculoDanificado?: boolean;
-
-  // Additional specification fields
-  especificarOutraPosicao?: string;
 }
 
-// Type-safe form value type
+// =============================================================================
+// MAIN FORM DATA INTERFACE (Composition of all sections)
+// =============================================================================
+
+export interface FormData
+  extends PreliminaryInfo,
+          TeamInfo,
+          WeatherConditions,
+          ScenePreservation,
+          ExternalLocation,
+          InternalLocation,
+          VehicleInfo,
+          VictimIdentification,
+          ForensicDetails,
+          EvidenceCollection,
+          AdditionalInfo,
+          CommunicationEvents {}
+
+// =============================================================================
+// TYPE-SAFE FORM VALUE TYPE
+// =============================================================================
+
 export type FormValue =
   | string
   | number
@@ -343,12 +468,19 @@ export type FormValue =
   | Array<{ nome?: string; contato?: string; observacoes?: string }>
   | undefined;
 
+// =============================================================================
+// FORM SECTION PROPS
+// =============================================================================
+
 export interface FormSectionProps {
   data: Partial<FormData>;
   onChange: (field: keyof FormData, value: FormValue) => void;
 }
 
-// Re-export all types from other type files
+// =============================================================================
+// RE-EXPORTS FROM OTHER TYPE FILES
+// =============================================================================
+
 export * from './internalLocationTypes';
 export * from './vehicleTypes';
 export * from './victimTypes';

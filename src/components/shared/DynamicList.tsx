@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { useDynamicList, DynamicItem } from '../../hooks/useDynamicList';
 import AutocompleteTextarea from './AutocompleteTextarea';
 
@@ -22,24 +23,24 @@ const DynamicList = <T extends DynamicItem>({
 }: DynamicListProps<T>) => {
   const { items, setItems } = useDynamicList<T>(initialItems);
 
-  const handleAdd = () => {
+  const handleAdd = useCallback(() => {
     const newItems = [...items, {} as T];
     setItems(newItems);
     onChange(newItems);
-  };
+  }, [items, setItems, onChange]);
 
-  const handleRemove = (index: number) => {
+  const handleRemove = useCallback((index: number) => {
     const newItems = items.filter((_, i) => i !== index);
     setItems(newItems);
     onChange(newItems);
-  };
+  }, [items, setItems, onChange]);
 
-  const handleChange = (index: number, field: string, value: string | number | boolean) => {
+  const handleChange = useCallback((index: number, field: string, value: string | number | boolean) => {
     const newItems = [...items];
     newItems[index] = { ...newItems[index], [field]: value };
     setItems(newItems);
     onChange(newItems);
-  };
+  }, [items, setItems, onChange]);
 
   return (
     <div className="dynamic-list">
