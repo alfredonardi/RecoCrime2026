@@ -1,5 +1,4 @@
-import React from 'react';
-import { useDynamicList } from '../../hooks/useDynamicList';
+import { useDynamicList, DynamicItem } from '../../hooks/useDynamicList';
 import AutocompleteTextarea from './AutocompleteTextarea';
 
 interface Field {
@@ -8,23 +7,23 @@ interface Field {
   type: 'text' | 'textarea';
 }
 
-interface DynamicListProps {
-  items: any[];
-  onChange: (items: any[]) => void;
+interface DynamicListProps<T extends DynamicItem> {
+  items: T[];
+  onChange: (items: T[]) => void;
   addButtonText: string;
   fields: Field[];
 }
 
-const DynamicList: React.FC<DynamicListProps> = ({
+const DynamicList = <T extends DynamicItem>({
   items: initialItems,
   onChange,
   addButtonText,
   fields
-}) => {
-  const { items, setItems } = useDynamicList(initialItems);
+}: DynamicListProps<T>) => {
+  const { items, setItems } = useDynamicList<T>(initialItems);
 
   const handleAdd = () => {
-    const newItems = [...items, {}];
+    const newItems = [...items, {} as T];
     setItems(newItems);
     onChange(newItems);
   };
@@ -35,7 +34,7 @@ const DynamicList: React.FC<DynamicListProps> = ({
     onChange(newItems);
   };
 
-  const handleChange = (index: number, field: string, value: string) => {
+  const handleChange = (index: number, field: string, value: string | number | boolean) => {
     const newItems = [...items];
     newItems[index] = { ...newItems[index], [field]: value };
     setItems(newItems);
@@ -52,7 +51,7 @@ const DynamicList: React.FC<DynamicListProps> = ({
                 <AutocompleteTextarea
                   id={`${field.name}-${index}`}
                   placeholder={field.placeholder}
-                  value={item[field.name] || ''}
+                  value={String(item[field.name] || '')}
                   onChange={(e) => handleChange(index, field.name, e.target.value)}
                 />
               ) : (
@@ -60,7 +59,7 @@ const DynamicList: React.FC<DynamicListProps> = ({
                   type="text"
                   className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   placeholder={field.placeholder}
-                  value={item[field.name] || ''}
+                  value={String(item[field.name] || '')}
                   onChange={(e) => handleChange(index, field.name, e.target.value)}
                   autoComplete="on"
                   name={`${field.name}-${index}`}

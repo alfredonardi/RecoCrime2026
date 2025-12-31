@@ -1,9 +1,9 @@
 import React from 'react';
-import { FormSectionProps } from '../../types';
+import { FormSectionProps, FormData } from '../../types';
 import CheckboxWithSpecification from '../shared/CheckboxWithSpecification';
 
 const AnimaisSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
-  const handleCheckboxChange = (field: string) => (checked: boolean) => {
+  const handleCheckboxChange = (field: keyof FormData) => (checked: boolean) => {
     onChange(field, checked);
   };
 

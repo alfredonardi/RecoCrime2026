@@ -1,14 +1,14 @@
 import { useEffect } from 'react';
-import { FormData } from '../types';
+import { FormData, FormValue } from '../types';
 
 export const useDateTimeSync = (
   data: FormData,
-  onChange: (field: string, value: any) => void
+  onChange: (field: keyof FormData, value: FormValue) => void
 ) => {
   useEffect(() => {
     if (data.data && data.hora) {
       // Only sync if the communication fields are empty
-      const fieldsToSync = [
+      const fieldsToSync: Array<[keyof FormData, keyof FormData]> = [
         ['comunicacaoDP', 'comunicacaoDPTime'],
         ['comunicacaoDHPP', 'comunicacaoDHPPTime'],
         ['chegadaPM', 'chegadaPMTime'],

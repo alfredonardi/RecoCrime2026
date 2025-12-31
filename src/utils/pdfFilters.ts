@@ -1,7 +1,10 @@
 // Utility functions to filter empty content from PDF
 
+// Type for values that can be checked for emptiness
+type CheckableValue = string | number | boolean | null | undefined | CheckableValue[] | Record<string, unknown>;
+
 // Check if a value should be considered "filled"
-export const hasValue = (value: any): boolean => {
+export const hasValue = (value: CheckableValue): boolean => {
   // Handle arrays
   if (Array.isArray(value)) {
     return value.length > 0 && value.some(item => hasValue(item));
@@ -30,27 +33,27 @@ export const hasValue = (value: any): boolean => {
   
   // Handle objects
   if (typeof value === 'object') {
-    return Object.values(value).some(v => hasValue(v));
+    return Object.values(value).some(v => hasValue(v as CheckableValue));
   }
   
   return false;
 };
 
 // Filter out empty values from an object
-export const filterEmptyValues = <T extends Record<string, any>>(data: T): Partial<T> => {
+export const filterEmptyValues = <T extends Record<string, CheckableValue>>(data: T): Partial<T> => {
   const filtered: Partial<T> = {};
-  
+
   for (const [key, value] of Object.entries(data)) {
-    if (hasValue(value)) {
-      filtered[key as keyof T] = value;
+    if (hasValue(value as CheckableValue)) {
+      filtered[key as keyof T] = value as T[keyof T];
     }
   }
-  
+
   return filtered;
 };
 
 // Check if a section should be rendered based on its fields
-export const shouldRenderSection = (data: Record<string, any>, fields: string[]): boolean => {
+export const shouldRenderSection = (data: Record<string, CheckableValue>, fields: string[]): boolean => {
   return fields.some(field => {
     const value = data[field];
     return value !== undefined && hasValue(value);
@@ -58,7 +61,7 @@ export const shouldRenderSection = (data: Record<string, any>, fields: string[])
 };
 
 // Get initial/default value for a field
-export const getInitialValue = (fieldType: string): any => {
+export const getInitialValue = (fieldType: string): string | boolean | null | never[] | undefined => {
   switch (fieldType) {
     case 'string':
       return '';
@@ -76,7 +79,7 @@ export const getInitialValue = (fieldType: string): any => {
 };
 
 // Check if a field has changed from its initial value
-export const hasChanged = (value: any, fieldType: string): boolean => {
+export const hasChanged = (value: CheckableValue, fieldType: string): boolean => {
   const initialValue = getInitialValue(fieldType);
   
   if (value === initialValue) {
@@ -99,7 +102,7 @@ export const hasChanged = (value: any, fieldType: string): boolean => {
 };
 
 // Check if a section has any changes from initial state
-export const hasSectionChanges = (data: Record<string, any>, fields: string[]): boolean => {
+export const hasSectionChanges = (data: Record<string, CheckableValue>, fields: string[]): boolean => {
   return fields.some(field => {
     const value = data[field];
     const fieldType = Array.isArray(value) ? 'array' : typeof value;
@@ -108,7 +111,7 @@ export const hasSectionChanges = (data: Record<string, any>, fields: string[]): 
 };
 
 // Function to check if a specific page has content
-export const hasPageContent = (data: Record<string, any>, page: string): boolean => {
+export const hasPageContent = (data: Record<string, CheckableValue>, page: string): boolean => {
   // Define which fields belong to each page
   const pageFields = {
     first: [
