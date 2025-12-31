@@ -155,19 +155,27 @@ export const ForensicDetails: React.FC<{ data: FormData }> = ({ data }) => {
       )}
 
       {/* Lesões Section */}
-      {data.lesoes && data.lesoes.length > 0 && (
-        <>
-          <Text style={styles.subsectionTitle}>Sede e Descrição das Lesões Aparentes</Text>
-          {data.lesoes.map((lesao, index) => (
-            <View key={index} style={styles.row}>
-              <Text style={[styles.label, { fontFamily: 'Helvetica-Bold' }]}>
-                {lesao.local}:
-              </Text>
-              <Text style={styles.value}>{lesao.descricao}</Text>
-            </View>
-          ))}
-        </>
-      )}
+      {(() => {
+        const validLesoes = data.lesoes?.filter(item =>
+          hasValue(item.local) || hasValue(item.descricao)
+        ) || [];
+
+        return validLesoes.length > 0 && (
+          <>
+            <Text style={styles.subsectionTitle}>Sede e Descrição das Lesões Aparentes</Text>
+            {validLesoes.map((lesao, index) => (
+              <View key={index} style={styles.row}>
+                {lesao.local && (
+                  <Text style={[styles.label, { fontFamily: 'Helvetica-Bold' }]}>
+                    {lesao.local}:
+                  </Text>
+                )}
+                <Text style={styles.value}>{lesao.descricao || ''}</Text>
+              </View>
+            ))}
+          </>
+        );
+      })()}
 
       {/* Coleta de Material para Perícia */}
       {hasValue(data.descricaoMaterialPericia) && (

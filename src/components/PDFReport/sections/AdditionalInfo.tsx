@@ -2,12 +2,20 @@ import React from 'react';
 import { View, Text } from '@react-pdf/renderer';
 import { FormData } from '../../../types';
 import { styles } from '../styles';
+import { hasValue } from '../../../utils/pdfFilters';
 
 export const AdditionalInfo: React.FC<{ data: Partial<FormData> }> = ({ data }) => {
+  // Filter out empty items
+  const validApreensoes = data.apreensoes?.filter(item => hasValue(item.descricao)) || [];
+  const validArrecadacoes = data.arrecadacoes?.filter(item => hasValue(item.descricao)) || [];
+  const validTestemunhas = data.testemunhas?.filter(item =>
+    hasValue(item.nome) || hasValue(item.contato) || hasValue(item.observacoes)
+  ) || [];
+
   // Check if there's any content to display
-  const hasContent = (data.apreensoes && data.apreensoes.length > 0) ||
-                    (data.arrecadacoes && data.arrecadacoes.length > 0) ||
-                    (data.testemunhas && data.testemunhas.length > 0);
+  const hasContent = validApreensoes.length > 0 ||
+                    validArrecadacoes.length > 0 ||
+                    validTestemunhas.length > 0;
 
   if (!hasContent) {
     return null;
@@ -16,36 +24,36 @@ export const AdditionalInfo: React.FC<{ data: Partial<FormData> }> = ({ data }) 
   return (
     <>
       <Text style={styles.sectionTitle}>8. Informações Adicionais</Text>
-      
+
       {/* Apreensões */}
-      {data.apreensoes && data.apreensoes.length > 0 && (
+      {validApreensoes.length > 0 && (
         <>
           <Text style={styles.subsectionTitle}>Apreensões</Text>
-          {data.apreensoes.map((item, index) => (
+          {validApreensoes.map((item, index) => (
             <View key={index} style={styles.row}>
               <Text style={styles.value}>{item.descricao}</Text>
             </View>
           ))}
         </>
       )}
-      
+
       {/* Arrecadações */}
-      {data.arrecadacoes && data.arrecadacoes.length > 0 && (
+      {validArrecadacoes.length > 0 && (
         <>
           <Text style={styles.subsectionTitle}>Arrecadações</Text>
-          {data.arrecadacoes.map((item, index) => (
+          {validArrecadacoes.map((item, index) => (
             <View key={index} style={styles.row}>
               <Text style={styles.value}>{item.descricao}</Text>
             </View>
           ))}
         </>
       )}
-      
+
       {/* Testemunhas */}
-      {data.testemunhas && data.testemunhas.length > 0 && (
+      {validTestemunhas.length > 0 && (
         <>
           <Text style={styles.subsectionTitle}>Testemunhas</Text>
-          {data.testemunhas.map((testemunha, index) => (
+          {validTestemunhas.map((testemunha, index) => (
             <View key={index} style={styles.row}>
               <Text style={[styles.label, { fontFamily: 'Helvetica-Bold' }]}>
                 Testemunha {index + 1}:

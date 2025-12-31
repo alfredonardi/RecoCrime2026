@@ -40,9 +40,23 @@ export const VictimInfo: React.FC<{ data: Partial<FormData> }> = ({ data }) => {
       )}
 
       {/* Dados Pessoais */}
-      <Text style={styles.subsectionTitle}>Dados Pessoais</Text>
-      
-      {hasChanged(data.nome, 'string') && (
+      {(hasChanged(data.nome, 'string') ||
+        hasChanged(data.nomeSocial, 'string') ||
+        hasChanged(data.vulgo, 'string') ||
+        hasChanged(data.cpf, 'string') ||
+        hasChanged(data.rg, 'string') ||
+        hasChanged(data.estadoCivil, 'string') ||
+        hasChanged(data.dataNascimento, 'string') ||
+        hasChanged(data.idade, 'number') ||
+        hasChanged(data.vitimaEndereco, 'string') ||
+        hasChanged(data.pai, 'string') ||
+        hasChanged(data.mae, 'string') ||
+        hasChanged(data.naturalidadeEstado, 'string') ||
+        hasChanged(data.profissao, 'string')) && (
+        <>
+          <Text style={styles.subsectionTitle}>Dados Pessoais</Text>
+
+          {hasChanged(data.nome, 'string') && (
         <View style={styles.row}>
           <Text style={styles.label}>Nome:</Text>
           <Text style={styles.value}>{data.nome}</Text>
@@ -136,9 +150,17 @@ export const VictimInfo: React.FC<{ data: Partial<FormData> }> = ({ data }) => {
           <Text style={styles.value}>{data.profissao}</Text>
         </View>
       )}
+        </>
+      )}
 
       {/* Descrição física */}
-      <Text style={styles.subsectionTitle}>Descrição Física</Text>
+      {(hasChanged(data.sexo, 'string') ||
+        hasChanged(data.identificacaoGenero, 'string') ||
+        hasChanged(data.etnia, 'string') ||
+        hasChanged(data.compleicaoFisica, 'string') ||
+        hasChanged(data.altura, 'number')) && (
+        <>
+          <Text style={styles.subsectionTitle}>Descrição Física</Text>
 
       {hasChanged(data.sexo, 'string') && (
         <View style={styles.row}>
@@ -177,6 +199,8 @@ export const VictimInfo: React.FC<{ data: Partial<FormData> }> = ({ data }) => {
           <Text style={styles.label}>Altura:</Text>
           <Text style={styles.value}>{data.altura} m</Text>
         </View>
+      )}
+        </>
       )}
 
       {/* Cabelo */}
@@ -236,9 +260,13 @@ export const VictimInfo: React.FC<{ data: Partial<FormData> }> = ({ data }) => {
       )}
 
       {/* Características psicológicas/sociológicas */}
-      <Text style={styles.subsectionTitle}>Características Psicológicas/Sociológicas</Text>
+      {(hasChanged(data.descricaoDesviosConduta, 'string') ||
+        hasChanged(data.relacionamentoFamilia, 'string') ||
+        hasChanged(data.residenciaVitima, 'string')) && (
+        <>
+          <Text style={styles.subsectionTitle}>Características Psicológicas/Sociológicas</Text>
 
-      {hasChanged(data.descricaoDesviosConduta, 'string') && (
+          {hasChanged(data.descricaoDesviosConduta, 'string') && (
         <View style={styles.row}>
           <Text style={styles.label}>Desvio de conduta:</Text>
           <Text style={styles.value}>{data.descricaoDesviosConduta}</Text>
@@ -260,11 +288,13 @@ export const VictimInfo: React.FC<{ data: Partial<FormData> }> = ({ data }) => {
         <View style={styles.row}>
           <Text style={styles.label}>Residia com:</Text>
           <Text style={styles.value}>
-            {data.residenciaVitima === 'outros' 
-              ? data.descricaoResidenciaVitimaOutros 
+            {data.residenciaVitima === 'outros'
+              ? data.descricaoResidenciaVitimaOutros
               : data.residenciaVitima}
           </Text>
         </View>
+      )}
+        </>
       )}
     </>
   );
