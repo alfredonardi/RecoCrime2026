@@ -8,13 +8,14 @@ const styles = StyleSheet.create({
     top: 30,
     left: 40,
     right: 40,
-    borderBottom: '1pt solid #ccc',
-    paddingBottom: 12,
+    backgroundColor: '#fff',
+  },
+  headerTop: {
     flexDirection: 'row',
     alignItems: 'flex-start',
     gap: 12,
-    backgroundColor: '#fff',
-    height: 90,
+    paddingBottom: 12,
+    borderBottom: '1pt solid #ccc',
   },
   logo: {
     width: 60,
@@ -40,14 +41,9 @@ const styles = StyleSheet.create({
     lineHeight: 1.3,
   },
   mainTitleContainer: {
-    position: 'absolute',
-    top: 125,
-    left: 40,
-    right: 40,
     textAlign: 'center',
-    backgroundColor: '#fff',
-    paddingTop: 8,
-    paddingBottom: 8,
+    paddingTop: 10,
+    paddingBottom: 10,
   },
   mainTitle: {
     fontSize: 11,
@@ -58,8 +54,8 @@ const styles = StyleSheet.create({
 });
 
 const PDFHeader: React.FC = () => (
-  <>
-    <View style={styles.header} fixed>
+  <View style={styles.header} fixed>
+    <View style={styles.headerTop}>
       <Image
         style={styles.logo}
         src={getLogoPath()}
@@ -72,10 +68,10 @@ const PDFHeader: React.FC = () => (
         <Text style={styles.subtitle}>Grupo Especial de Atendimento a Local de Crime – GEACRIM</Text>
       </View>
     </View>
-    <View style={styles.mainTitleContainer} fixed>
+    <View style={styles.mainTitleContainer}>
       <Text style={styles.mainTitle}>RECOGNIÇÃO VISUOGRÁFICA DE LOCAL DE CRIME</Text>
     </View>
-  </>
+  </View>
 );
 
 export default PDFHeader;
