@@ -6,7 +6,10 @@ import PDFFooter from '../components/PDFReport/PDFFooter';
 
 const styles = StyleSheet.create({
   page: {
-    padding: 30,
+    paddingTop: 150,      // Espaço para o header (120pt altura + margem)
+    paddingBottom: 100,   // Espaço para o footer
+    paddingLeft: 40,      // Margem lateral esquerda
+    paddingRight: 40,     // Margem lateral direita
     fontFamily: 'Helvetica'
   }
 });
