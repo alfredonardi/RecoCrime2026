@@ -5,7 +5,7 @@ import { getLogoPath } from '../../utils/logoUtils';
 const styles = StyleSheet.create({
   header: {
     position: 'absolute',
-    top: 20,
+    top: 30,
     left: 40,
     right: 40,
     borderBottom: '1pt solid #ccc',
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     gap: 12,
     backgroundColor: '#fff',
-    height: 110,
+    height: 120,
   },
   logo: {
     width: 60,

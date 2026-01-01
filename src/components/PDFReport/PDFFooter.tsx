@@ -4,14 +4,14 @@ import { Text, View, StyleSheet } from '@react-pdf/renderer';
 const styles = StyleSheet.create({
   footer: {
     position: 'absolute',
-    bottom: 30,
+    bottom: 40,
     left: 40,
     right: 40,
     textAlign: 'center',
     paddingTop: 10,
     borderTop: '1px solid #ccc',
     backgroundColor: '#fff',
-    height: 60
+    height: 70
   },
   text: {
     fontSize: 10,
