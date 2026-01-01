@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
 });
 
 const PDFTitle: React.FC = () => (
-  <View style={styles.titleContainer}>
+  <View style={styles.titleContainer} fixed>
     <Text style={styles.title}>
       RECOGNIÇÃO VISUOGRÁFICA DE LOCAL DE CRIME
     </Text>
