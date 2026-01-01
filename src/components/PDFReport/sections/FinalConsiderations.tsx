@@ -4,9 +4,18 @@ import { FormData } from '../../../types';
 import { styles } from '../styles';
 import { hasValue } from '../../../utils/pdfFilters';
 
-export const FinalConsiderations: React.FC<{ data: FormData }> = ({ data }) => (
-  <>
-    <Text style={styles.sectionTitle}>9. Considerações Finais</Text>
+export const FinalConsiderations: React.FC<{ data: FormData }> = ({ data }) => {
+  // Check if there's any content to display
+  const hasContent = hasValue(data.investigacoesPreliminares) ||
+                    hasValue(data.consideracoesFinais);
+
+  if (!hasContent) {
+    return null;
+  }
+
+  return (
+    <>
+      <Text style={styles.sectionTitle}>9. Considerações Finais</Text>
     
     {hasValue(data.investigacoesPreliminares) && (
       <>
@@ -26,4 +35,5 @@ export const FinalConsiderations: React.FC<{ data: FormData }> = ({ data }) => (
       </>
     )}
   </>
-);
+  );
+};

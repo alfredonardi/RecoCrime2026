@@ -5,6 +5,28 @@ import { styles } from '../styles';
 import { hasValue } from '../../../utils/pdfFilters';
 
 export const InternalLocationInfo: React.FC<{ data: FormData }> = ({ data }) => {
+  // Check if there's any content to display
+  const hasContent = hasValue(data.tipoAmbiente) ||
+                    hasValue(data.tipoConstrucao) ||
+                    hasValue(data.caracteristicasMoradia) ||
+                    hasValue(data.condicaoHigiene) ||
+                    hasValue(data.materialCoberturaImovel) ||
+                    hasValue(data.tipoPiso) ||
+                    hasValue(data.moveisUtensilios) ||
+                    hasValue(data.habitosAlimentares) ||
+                    hasValue(data.comodoCorpo) ||
+                    hasValue(data.descricaoObjetosCena) ||
+                    hasValue(data.descricaoObjetosOutrosComodos) ||
+                    hasValue(data.localDisparo) ||
+                    hasValue(data.vestigiosSangue) ||
+                    hasValue(data.vestigioBiologico) ||
+                    hasValue(data.descricaoMaterialLeitura) ||
+                    hasValue(data.informacoesPertinentesLocalInterno);
+
+  if (!hasContent) {
+    return null;
+  }
+
   return (
     <>
       <Text style={styles.sectionTitle}>5i. Local imediato interno</Text>

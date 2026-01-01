@@ -13,6 +13,13 @@ export const ExternalIdentifiersInfo: React.FC<{ data: Partial<FormData> }> = ({
   const validVestimentas = [...(data.vestimentas || []), ...(data.aderecos || [])]
     .filter(item => hasValue(item.tipo) || hasValue(item.descricao));
 
+  // Check if there's any content to display
+  const hasContent = validTatuagens.length > 0 || validVestimentas.length > 0;
+
+  if (!hasContent) {
+    return null;
+  }
+
   return (
     <>
       <Text style={styles.sectionTitle}>6iev. Identificadores Externos da Vítima</Text>
