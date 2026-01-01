@@ -4,15 +4,16 @@ import { Text, View, StyleSheet } from '@react-pdf/renderer';
 const styles = StyleSheet.create({
   titleContainer: {
     position: 'absolute',
-    top: '120pt',
-    left: '42pt',
-    right: '42pt',
+    top: 130,           // Logo abaixo do header (30 + 90 + 10 margem)
+    left: 40,
+    right: 40,
     textAlign: 'center',
     backgroundColor: '#fff',
-    paddingBottom: '24pt',
+    paddingBottom: 10,
+    paddingTop: 10,
   },
   title: {
-    fontSize: 14,
+    fontSize: 11,
     fontFamily: 'Helvetica-Bold',
     textAlign: 'center',
     lineHeight: 1.4,
