@@ -1,12 +1,13 @@
 import { Document, Page, StyleSheet } from '@react-pdf/renderer';
 import { FormData } from '../types';
 import PDFHeader from '../components/PDFReport/PDFHeader';
+import PDFTitle from '../components/PDFReport/PDFTitle';
 import PDFContent from '../components/PDFReport/PDFContent';
 import PDFFooter from '../components/PDFReport/PDFFooter';
 
 const styles = StyleSheet.create({
   page: {
-    paddingTop: 165,      // Espaço para o header (105px altura + 30px topo + 30px buffer)
+    paddingTop: 185,      // Header (90) + título (35) + margens (60)
     paddingBottom: 90,    // Espaço para o footer (70px altura + 20px margem)
     paddingLeft: 40,      // Margem lateral esquerda
     paddingRight: 40,     // Margem lateral direita
@@ -18,6 +19,7 @@ export const createPDFDocument = (data: FormData) => (
   <Document>
     <Page size="A4" style={styles.page}>
       <PDFHeader />
+      <PDFTitle />
       <PDFContent data={data} page="first" />
       <PDFFooter />
     </Page>

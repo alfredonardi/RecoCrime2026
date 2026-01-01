@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     gap: 12,
     backgroundColor: '#fff',
-    height: 105,
+    height: 90,
   },
   logo: {
     width: 60,
@@ -66,9 +66,6 @@ const PDFHeader: React.FC = () => (
       <Text style={styles.subtitle}>Departamento Estadual de Homicídios e Proteção à Pessoa – DHPP</Text>
       <Text style={styles.subtitle}>Divisão de Homicídios "Dr. FRANCISCO DE ASSIS CAMARGO MAGNO"</Text>
       <Text style={styles.subtitle}>Grupo Especial de Atendimento a Local de Crime – GEACRIM</Text>
-      <View style={styles.mainTitleContainer}>
-        <Text style={styles.mainTitle}>RECOGNIÇÃO VISUOGRÁFICA DE LOCAL DE CRIME</Text>
-      </View>
     </View>
   </View>
 );
