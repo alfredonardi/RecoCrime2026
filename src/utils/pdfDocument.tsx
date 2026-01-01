@@ -1,7 +1,6 @@
 import { Document, Page, StyleSheet } from '@react-pdf/renderer';
 import { FormData } from '../types';
 import PDFHeader from '../components/PDFReport/PDFHeader';
-import PDFTitle from '../components/PDFReport/PDFTitle';
 import PDFContent from '../components/PDFReport/PDFContent';
 import PDFFooter from '../components/PDFReport/PDFFooter';
 
@@ -19,7 +18,6 @@ export const createPDFDocument = (data: FormData) => (
   <Document>
     <Page size="A4" style={styles.page}>
       <PDFHeader />
-      <PDFTitle />
       <PDFContent data={data} page="first" />
       <PDFFooter />
     </Page>
