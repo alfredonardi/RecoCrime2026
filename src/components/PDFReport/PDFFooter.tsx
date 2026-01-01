@@ -5,12 +5,13 @@ const styles = StyleSheet.create({
   footer: {
     position: 'absolute',
     bottom: 30,
-    left: 50,
-    right: 50,
+    left: 40,
+    right: 40,
     textAlign: 'center',
     paddingTop: 10,
     borderTop: '1px solid #ccc',
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
+    height: 60
   },
   text: {
     fontSize: 10,

@@ -5,52 +5,52 @@ import { getLogoPath } from '../../utils/logoUtils';
 const styles = StyleSheet.create({
   header: {
     position: 'absolute',
-    top: '24pt',
-    left: '42pt',
-    right: '42pt',
+    top: 20,
+    left: 40,
+    right: 40,
     borderBottom: '1pt solid #ccc',
-    paddingBottom: '12pt',
+    paddingBottom: 12,
     flexDirection: 'row',
     alignItems: 'flex-start',
-    gap: '12pt',
+    gap: 12,
     backgroundColor: '#fff',
-    height: '120pt',
+    height: 110,
   },
   logo: {
-    width: '60pt',
+    width: 60,
     height: 'auto'
   },
   headerText: {
     flex: 1,
-    paddingTop: '6pt',
+    paddingTop: 6,
     display: 'flex',
     flexDirection: 'column',
   },
   title: {
     fontSize: 11,
     fontWeight: 'bold',
-    marginBottom: '3pt',
+    marginBottom: 3,
     fontFamily: 'Helvetica-Bold',
     lineHeight: 1.3,
   },
   subtitle: {
     fontSize: 10,
-    marginBottom: '2pt',
+    marginBottom: 2,
     fontFamily: 'Helvetica',
     lineHeight: 1.3,
   },
   mainTitleContainer: {
     width: '100%',
     display: 'flex',
-    alignItems: 'flex-start', // Alterado para alinhar à esquerda
-    marginTop: '6pt',
-    paddingLeft: '24pt', // Adicionado padding à esquerda para mover o título
+    alignItems: 'flex-start',
+    marginTop: 6,
+    paddingLeft: 24,
   },
   mainTitle: {
-    fontSize: 10, // Reduzido para 10pt
+    fontSize: 10,
     fontWeight: 'bold',
     fontFamily: 'Helvetica-Bold',
-    textAlign: 'left', // Alterado para alinhar à esquerda
+    textAlign: 'left',
   }
 });
 
