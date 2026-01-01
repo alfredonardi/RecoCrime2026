@@ -3,11 +3,12 @@ import { Document, Page, View, StyleSheet } from '@react-pdf/renderer';
 import PDFHeader from './PDFReport/PDFHeader';
 import PDFContent from './PDFReport/PDFContent';
 import PDFFooter from './PDFReport/PDFFooter';
+import PDFTitle from './PDFReport/PDFTitle';
 import { FormData } from '../types';
 
 const styles = StyleSheet.create({
     page: {
-        paddingTop: 170,        // Header completo (logo + textos + linha + título) + margem
+        paddingTop: 170,        // Espaço para header, título principal e margem de respiro
         paddingBottom: 90,      // Espaço para o footer (70px altura + 20px margem)
         paddingLeft: 40,        // Margem lateral esquerda
         paddingRight: 40,       // Margem lateral direita
@@ -29,6 +30,7 @@ const PDFDocument: React.FC<PDFDocumentProps> = ({ data }) => {
         <Document>
             <Page size="A4" style={styles.page}>
                 <PDFHeader />
+                <PDFTitle />
                 <View style={styles.content}>
                     <PDFContent data={data} wrap />
                 </View>
