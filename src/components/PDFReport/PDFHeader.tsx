@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'flex-start',
     gap: 12,
-    paddingBottom: 12,
+    paddingBottom: 8,
     borderBottom: '1pt solid #ccc',
   },
   logo: {
