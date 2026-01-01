@@ -3,10 +3,11 @@ import { FormData } from '../types';
 import PDFHeader from '../components/PDFReport/PDFHeader';
 import PDFContent from '../components/PDFReport/PDFContent';
 import PDFFooter from '../components/PDFReport/PDFFooter';
+import PDFTitle from '../components/PDFReport/PDFTitle';
 
 const styles = StyleSheet.create({
   page: {
-    paddingTop: 170,      // Header completo (logo + textos + linha + título) + margem
+    paddingTop: 190,      // Espaço para header, título principal e margem de respiro
     paddingBottom: 90,    // Espaço para o footer (70px altura + 20px margem)
     paddingLeft: 40,      // Margem lateral esquerda
     paddingRight: 40,     // Margem lateral direita
@@ -18,6 +19,7 @@ export const createPDFDocument = (data: FormData) => (
   <Document>
     <Page size="A4" style={styles.page}>
       <PDFHeader />
+      <PDFTitle />
       <PDFContent data={data} page="first" />
       <PDFFooter />
     </Page>

@@ -39,17 +39,6 @@ const styles = StyleSheet.create({
     marginBottom: 2,
     fontFamily: 'Helvetica',
     lineHeight: 1.3,
-  },
-  mainTitleContainer: {
-    textAlign: 'center',
-    paddingTop: 10,
-    paddingBottom: 10,
-  },
-  mainTitle: {
-    fontSize: 11,
-    fontWeight: 'bold',
-    fontFamily: 'Helvetica-Bold',
-    textAlign: 'center',
   }
 });
 
@@ -67,9 +56,6 @@ const PDFHeader: React.FC = () => (
         <Text style={styles.subtitle}>Divisão de Homicídios "Dr. FRANCISCO DE ASSIS CAMARGO MAGNO"</Text>
         <Text style={styles.subtitle}>Grupo Especial de Atendimento a Local de Crime – GEACRIM</Text>
       </View>
-    </View>
-    <View style={styles.mainTitleContainer}>
-      <Text style={styles.mainTitle}>RECOGNIÇÃO VISUOGRÁFICA DE LOCAL DE CRIME</Text>
     </View>
   </View>
 );

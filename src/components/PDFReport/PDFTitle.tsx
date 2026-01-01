@@ -4,7 +4,7 @@ import { Text, View, StyleSheet } from '@react-pdf/renderer';
 const styles = StyleSheet.create({
   titleContainer: {
     position: 'absolute',
-    top: 125,           // Logo abaixo do header (30 + 90 + 5 margem)
+    top: 140,           // Centralizado entre o header e o início do conteúdo
     left: 40,
     right: 40,
     textAlign: 'center',
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
 });
 
 const PDFTitle: React.FC = () => (
-  <View style={styles.titleContainer}>
+  <View style={styles.titleContainer} fixed>
     <Text style={styles.title}>
       RECOGNIÇÃO VISUOGRÁFICA DE LOCAL DE CRIME
     </Text>

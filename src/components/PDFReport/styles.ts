@@ -49,6 +49,7 @@ export const styles = StyleSheet.create({
         width: '100%',
         paddingRight: 12,
         alignItems: 'flex-start',
+        position: 'relative',
     },
     label: {
         width: '35%',
