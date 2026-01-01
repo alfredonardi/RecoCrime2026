@@ -6,7 +6,7 @@ import PDFFooter from '../components/PDFReport/PDFFooter';
 
 const styles = StyleSheet.create({
   page: {
-    paddingTop: 185,      // Header (90) + título (35) + margens (60)
+    paddingTop: 170,      // Header completo (logo + textos + linha + título) + margem
     paddingBottom: 90,    // Espaço para o footer (70px altura + 20px margem)
     paddingLeft: 40,      // Margem lateral esquerda
     paddingRight: 40,     // Margem lateral direita
