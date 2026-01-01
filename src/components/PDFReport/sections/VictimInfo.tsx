@@ -5,6 +5,41 @@ import { styles } from '../styles';
 import { hasChanged } from '../../../utils/pdfFilters';
 
 export const VictimInfo: React.FC<{ data: Partial<FormData> }> = ({ data }) => {
+  // Check if there's any content to display
+  const hasContent = hasChanged(data.acaoVitima, 'string') ||
+                    hasChanged(data.identificacaoVitima, 'string') ||
+                    hasChanged(data.motivo, 'string') ||
+                    hasChanged(data.nome, 'string') ||
+                    hasChanged(data.nomeSocial, 'string') ||
+                    hasChanged(data.vulgo, 'string') ||
+                    hasChanged(data.cpf, 'string') ||
+                    hasChanged(data.rg, 'string') ||
+                    hasChanged(data.estadoCivil, 'string') ||
+                    hasChanged(data.dataNascimento, 'string') ||
+                    hasChanged(data.idade, 'number') ||
+                    hasChanged(data.vitimaEndereco, 'string') ||
+                    hasChanged(data.pai, 'string') ||
+                    hasChanged(data.mae, 'string') ||
+                    hasChanged(data.naturalidadeEstado, 'string') ||
+                    hasChanged(data.profissao, 'string') ||
+                    hasChanged(data.sexo, 'string') ||
+                    hasChanged(data.identificacaoGenero, 'string') ||
+                    hasChanged(data.etnia, 'string') ||
+                    hasChanged(data.compleicaoFisica, 'string') ||
+                    hasChanged(data.altura, 'number') ||
+                    hasChanged(data.tipoCabelo, 'string') ||
+                    hasChanged(data.comprimentoCabelo, 'string') ||
+                    hasChanged(data.corCabelo, 'string') ||
+                    hasChanged(data.corOlhos, 'string') ||
+                    hasChanged(data.caracteristicasVisiveis, 'string') ||
+                    hasChanged(data.descricaoDesviosConduta, 'string') ||
+                    hasChanged(data.relacionamentoFamilia, 'string') ||
+                    hasChanged(data.residenciaVitima, 'string');
+
+  if (!hasContent) {
+    return null;
+  }
+
   return (
     <>
       <Text style={styles.sectionTitle}>6. Informações Importantes sobre a Vítima</Text>
