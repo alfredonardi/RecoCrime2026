@@ -10,6 +10,7 @@ const ClimaSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
       <div className="space-y-4">
         <select
           id="climaSelect"
+          name="climaSelect"
           className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           value={data.clima || ''}
           onChange={(e) => onChange('clima', e.target.value)}
@@ -28,6 +29,8 @@ const ClimaSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
 
         {data.clima === 'outros' && (
           <textarea
+            id="especificacaoClima"
+            name="especificacaoClima"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 mt-4 resize-none"
             placeholder="Especifique o clima"
             value={data.especificacaoClima || ''}

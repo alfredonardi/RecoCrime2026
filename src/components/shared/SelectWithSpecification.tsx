@@ -39,6 +39,7 @@ const SelectWithSpecification: React.FC<SelectWithSpecificationProps> = memo(({
       </label>
       <select
         id={id}
+        name={id}
         className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         value={value}
         onChange={handleSelectChange}
@@ -54,6 +55,8 @@ const SelectWithSpecification: React.FC<SelectWithSpecificationProps> = memo(({
       {value === 'outros' && (
         <input
           type="text"
+          id={`${id}-specification`}
+          name={`${id}-specification`}
           className="mt-2 w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           placeholder="Especifique"
           value={specificationValue}

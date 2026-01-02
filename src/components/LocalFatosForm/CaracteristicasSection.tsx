@@ -8,6 +8,7 @@ const CaracteristicasSection: React.FC<FormSectionProps> = ({ data, onChange }) 
       
       <select
         id="tipoLocal"
+        name="tipoLocal"
         className="normal-input"
         value={data.tipoLocal || ''}
         onChange={(e) => onChange('tipoLocal', e.target.value)}
@@ -24,6 +25,7 @@ const CaracteristicasSection: React.FC<FormSectionProps> = ({ data, onChange }) 
         <input
           type="text"
           id="especificacaoTipoLocal"
+          name="especificacaoTipoLocal"
           className="campo-especificacao"
           value={data.especificacaoTipoLocal || ''}
           onChange={(e) => onChange('especificacaoTipoLocal', e.target.value)}

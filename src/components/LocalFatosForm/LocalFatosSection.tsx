@@ -7,28 +7,31 @@ const LocalFatosSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
       <legend><strong>Local dos Fatos</strong></legend>
       
       <label htmlFor="localFatos"><strong>Endereço:</strong></label>
-      <input 
-        type="text" 
-        id="localFatos" 
+      <input
+        type="text"
+        id="localFatos"
+        name="localFatos"
         className="large-input"
         value={data.localFatos || ''}
         onChange={(e) => onChange('localFatos', e.target.value)}
       />
 
       <label htmlFor="pontoReferencia"><strong>Ponto de referência:</strong></label>
-      <input 
-        type="text" 
-        id="pontoReferencia" 
-        className="large-input" 
+      <input
+        type="text"
+        id="pontoReferencia"
+        name="pontoReferencia"
+        className="large-input"
         placeholder="Especifique"
         value={data.pontoReferencia || ''}
         onChange={(e) => onChange('pontoReferencia', e.target.value)}
       />
 
       <label htmlFor="tipoLocal"><strong>Tipo de local:</strong></label>
-      <select 
-        id="tipoLocal" 
-        className="normal-input" 
+      <select
+        id="tipoLocal"
+        name="tipoLocal"
+        className="normal-input"
         required
         value={data.tipoLocal || ''}
         onChange={(e) => onChange('tipoLocal', e.target.value)}
@@ -39,8 +42,9 @@ const LocalFatosSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
       </select>
 
       <label htmlFor="circunscricaoPolicial"><strong>Circunscrição:</strong></label>
-      <select 
-        id="circunscricaoPolicial" 
+      <select
+        id="circunscricaoPolicial"
+        name="circunscricaoPolicial"
         className="normal-input"
         value={data.circunscricaoPolicial || ''}
         onChange={(e) => onChange('circunscricaoPolicial', e.target.value)}
@@ -54,8 +58,9 @@ const LocalFatosSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
 
       <label htmlFor="boDP"><strong>Boletim de Ocorrência lavrado no DP:</strong></label>
       <div className="bo-container">
-        <select 
-          id="boDP" 
+        <select
+          id="boDP"
+          name="boDP"
           className="input-margin-bodp"
           value={data.boDP || ''}
           onChange={(e) => onChange('boDP', e.target.value)}
@@ -66,11 +71,12 @@ const LocalFatosSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
           <option value="3DP">3º DP</option>
           {/* Adicione mais opções conforme necessário */}
         </select>
-        <input 
-          type="text" 
-          id="boDPInfo" 
-          maxLength={11} 
-          className="normal-input" 
+        <input
+          type="text"
+          id="boDPInfo"
+          name="boDPInfo"
+          maxLength={11}
+          className="normal-input"
           placeholder="XX1234/2024"
           value={data.boDPInfo || ''}
           onChange={(e) => onChange('boDPInfo', e.target.value)}
@@ -78,8 +84,9 @@ const LocalFatosSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
       </div>
 
       <label htmlFor="boDHPP"><strong>Atendimento pelo DHPP</strong></label>
-      <select 
-        id="boDHPP" 
+      <select
+        id="boDHPP"
+        name="boDHPP"
         className="normal-input"
         value={data.boDHPP || ''}
         onChange={(e) => onChange('boDHPP', e.target.value)}

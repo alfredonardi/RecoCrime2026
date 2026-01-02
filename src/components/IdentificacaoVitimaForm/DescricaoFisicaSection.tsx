@@ -14,6 +14,7 @@ const DescricaoFisicaSection: React.FC<FormSectionProps> = ({ data, onChange }) 
           </label>
           <select
             id="sexo"
+            name="sexo"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.sexo || ''}
             onChange={(e) => onChange('sexo', e.target.value)}
@@ -33,6 +34,7 @@ const DescricaoFisicaSection: React.FC<FormSectionProps> = ({ data, onChange }) 
           <input
             type="text"
             id="identificacaoGenero"
+            name="identificacaoGenero"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.identificacaoGenero || ''}
             onChange={(e) => onChange('identificacaoGenero', e.target.value)}
@@ -80,6 +82,7 @@ const DescricaoFisicaSection: React.FC<FormSectionProps> = ({ data, onChange }) 
           <input
             type="number"
             id="altura"
+            name="altura"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             min={0.0}
             max={2.50}

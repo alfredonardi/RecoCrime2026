@@ -12,6 +12,7 @@ const CaracteristicasPsicologicasSection: React.FC<FormSectionProps> = ({ data, 
           </label>
           <textarea
             id="desviosConduta"
+            name="desviosConduta"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none"
             placeholder="Descreva os desvios de conduta observados"
             value={data.descricaoDesviosConduta || ''}
@@ -25,6 +26,7 @@ const CaracteristicasPsicologicasSection: React.FC<FormSectionProps> = ({ data, 
           </label>
           <select
             id="relacionamentoFamilia"
+            name="relacionamentoFamilia"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.relacionamentoFamilia || ''}
             onChange={(e) => onChange('relacionamentoFamilia', e.target.value)}
@@ -39,6 +41,8 @@ const CaracteristicasPsicologicasSection: React.FC<FormSectionProps> = ({ data, 
           {data.relacionamentoFamilia === 'outros' && (
             <input
               type="text"
+              id="relacionamentoFamilia-specification"
+              name="relacionamentoFamilia-specification"
               className="w-full h-[46px] mt-2 p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               placeholder="Especifique o tipo de relacionamento"
               value={data.descricaoOutrosRelacionamento || ''}
@@ -53,6 +57,7 @@ const CaracteristicasPsicologicasSection: React.FC<FormSectionProps> = ({ data, 
           </label>
           <select
             id="residenciaVitima"
+            name="residenciaVitima"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.residenciaVitima || ''}
             onChange={(e) => onChange('residenciaVitima', e.target.value)}
@@ -68,6 +73,8 @@ const CaracteristicasPsicologicasSection: React.FC<FormSectionProps> = ({ data, 
           {data.residenciaVitima === 'outros' && (
             <input
               type="text"
+              id="residenciaVitima-specification"
+              name="residenciaVitima-specification"
               className="w-full h-[46px] mt-2 p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               placeholder="Especifique com quem residia"
               value={data.descricaoResidenciaVitimaOutros || ''}

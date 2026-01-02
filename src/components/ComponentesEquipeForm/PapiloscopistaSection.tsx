@@ -10,9 +10,10 @@ const PapiloscopistaSection: React.FC<FormSectionProps> = ({ data, onChange }) =
         <label htmlFor="papiloscopistas" className="block text-sm font-medium text-gray-700 mb-1">
           <strong>Papiloscopistas:</strong>
         </label>
-        <input 
-          type="text" 
-          id="papiloscopistas" 
+        <input
+          type="text"
+          id="papiloscopistas"
+          name="papiloscopistas"
           className="w-full p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           placeholder="Nome dos Papiloscopistas"
           value={data.papiloscopistas || ''}

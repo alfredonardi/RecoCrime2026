@@ -10,6 +10,7 @@ const EnderecoSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
       <input
         type="text"
         id="logradouro"
+        name="logradouro"
         className="large-input"
         value={data.logradouro || ''}
         onChange={(e) => onChange('logradouro', e.target.value)}
@@ -19,6 +20,7 @@ const EnderecoSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
       <input
         type="text"
         id="numero"
+        name="numero"
         className="small-input"
         value={data.numero || ''}
         onChange={(e) => onChange('numero', e.target.value)}
@@ -28,6 +30,7 @@ const EnderecoSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
       <input
         type="text"
         id="bairro"
+        name="bairro"
         className="medium-input"
         value={data.bairro || ''}
         onChange={(e) => onChange('bairro', e.target.value)}
@@ -37,6 +40,7 @@ const EnderecoSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
       <input
         type="text"
         id="cidade"
+        name="cidade"
         className="medium-input"
         value={data.cidade || ''}
         onChange={(e) => onChange('cidade', e.target.value)}

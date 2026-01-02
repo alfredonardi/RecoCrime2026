@@ -12,6 +12,7 @@ const CorpoMovidoSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
           </label>
           <select
             id="corpoMovido"
+            name="corpoMovido"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.corpoMovido || ''}
             onChange={(e) => onChange('corpoMovido', e.target.value)}
@@ -29,6 +30,7 @@ const CorpoMovidoSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
             </label>
             <textarea
               id="detalhesCorpoMovido"
+              name="detalhesCorpoMovido"
               className="w-full h-[92px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               placeholder="Descreva os detalhes sobre a movimentação do corpo"
               value={data.detalhesCorpoMovido || ''}

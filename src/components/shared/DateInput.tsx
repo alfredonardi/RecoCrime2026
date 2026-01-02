@@ -36,6 +36,7 @@ const DateInput: React.FC<DateInputProps> = ({
       <input
         type="date"
         id={id}
+        name={id}
         className={className}
         value={value}
         onChange={handleChange}

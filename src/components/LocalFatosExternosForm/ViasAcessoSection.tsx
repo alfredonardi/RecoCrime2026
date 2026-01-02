@@ -10,6 +10,8 @@ const ViasAcessoSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
         <label>
           <input
             type="checkbox"
+            id="viasAcessoPavimentada"
+            name="viasAcessoPavimentada"
             checked={data.viasAcessoPavimentada || false}
             onChange={(e) => onChange('viasAcessoPavimentada', e.target.checked)}
           />
@@ -19,6 +21,8 @@ const ViasAcessoSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
         <label>
           <input
             type="checkbox"
+            id="viasAcessoNaoPavimentada"
+            name="viasAcessoNaoPavimentada"
             checked={data.viasAcessoNaoPavimentada || false}
             onChange={(e) => onChange('viasAcessoNaoPavimentada', e.target.checked)}
           />
@@ -29,6 +33,7 @@ const ViasAcessoSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
       <label htmlFor="observacoesViasAcesso"><strong>Observações:</strong></label>
       <textarea
         id="observacoesViasAcesso"
+        name="observacoesViasAcesso"
         className="large-input"
         value={data.observacoesViasAcesso || ''}
         onChange={(e) => onChange('observacoesViasAcesso', e.target.value)}

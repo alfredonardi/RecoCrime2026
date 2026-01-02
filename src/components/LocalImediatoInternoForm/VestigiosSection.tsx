@@ -13,6 +13,7 @@ const VestigiosSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
           </label>
           <select
             id="localDisparo"
+            name="localDisparo"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.localDisparo || ''}
             onChange={(e) => onChange('localDisparo', e.target.value)}

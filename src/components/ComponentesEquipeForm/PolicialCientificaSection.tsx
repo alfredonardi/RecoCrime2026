@@ -11,9 +11,10 @@ const PolicialCientificaSection: React.FC<FormSectionProps> = ({ data, onChange 
           <label htmlFor="perito" className="block text-sm font-medium text-gray-700 mb-1">
             <strong>Perito(a) Criminal:</strong>
           </label>
-          <input 
-            type="text" 
-            id="perito" 
+          <input
+            type="text"
+            id="perito"
+            name="perito"
             className="w-full p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             placeholder="Perito(a) Criminal"
             value={data.perito || ''}
@@ -25,9 +26,10 @@ const PolicialCientificaSection: React.FC<FormSectionProps> = ({ data, onChange 
           <label htmlFor="fotografo" className="block text-sm font-medium text-gray-700 mb-1">
             <strong>Fotógrafo(a) Pericial:</strong>
           </label>
-          <input 
-            type="text" 
-            id="fotografo" 
+          <input
+            type="text"
+            id="fotografo"
+            name="fotografo"
             className="w-full p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             placeholder="Fotógrafo(a) Pericial"
             value={data.fotografo || ''}

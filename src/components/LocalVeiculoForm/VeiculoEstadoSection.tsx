@@ -12,6 +12,7 @@ const VeiculoEstadoSection: React.FC<FormSectionProps> = ({ data, onChange }) =>
           </label>
           <select
             id="motorLigado"
+            name="motorLigado"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.motorLigado || ''}
             onChange={(e) => onChange('motorLigado', e.target.value)}
@@ -28,6 +29,7 @@ const VeiculoEstadoSection: React.FC<FormSectionProps> = ({ data, onChange }) =>
           </label>
           <select
             id="danosVeiculo"
+            name="danosVeiculo"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.danosVeiculo || ''}
             onChange={(e) => onChange('danosVeiculo', e.target.value)}
@@ -45,6 +47,7 @@ const VeiculoEstadoSection: React.FC<FormSectionProps> = ({ data, onChange }) =>
             </label>
             <textarea
               id="descricaoDanos"
+              name="descricaoDanos"
               className="w-full h-[92px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               placeholder="Descreva os danos"
               value={data.descricaoDanos || ''}

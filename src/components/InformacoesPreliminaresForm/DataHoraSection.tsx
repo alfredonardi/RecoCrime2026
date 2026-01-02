@@ -10,9 +10,10 @@ const DataHoraSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
       <legend><strong>Data e Hora do Evento</strong></legend>
       <div className="flex flex-col gap-2">
         <div className="relative w-full">
-          <input 
-            type="date" 
-            id="data" 
+          <input
+            type="date"
+            id="data"
+            name="data"
             className="w-full p-3 border rounded-lg bg-white pr-10"
             value={data.data || ''}
             onChange={(e) => onChange('data', e.target.value)}
@@ -27,9 +28,10 @@ const DataHoraSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
         </div>
 
         <div className="relative w-full">
-          <input 
-            type="time" 
-            id="hora" 
+          <input
+            type="time"
+            id="hora"
+            name="hora"
             className="w-full p-3 border rounded-lg bg-white pr-10"
             value={data.hora || ''}
             onChange={(e) => onChange('hora', e.target.value)}

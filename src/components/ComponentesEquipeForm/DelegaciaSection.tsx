@@ -11,9 +11,10 @@ const DelegaciaSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
           <label htmlFor="delegado" className="block text-sm font-medium text-gray-700 mb-1">
             <strong>Delegado(a):</strong>
           </label>
-          <input 
-            type="text" 
-            id="delegado" 
+          <input
+            type="text"
+            id="delegado"
+            name="delegado"
             className="w-full p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             placeholder="Delegado(a)"
             value={data.delegado || ''}
@@ -25,9 +26,10 @@ const DelegaciaSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
           <label htmlFor="escrivao" className="block text-sm font-medium text-gray-700 mb-1">
             <strong>Escrivão(ã):</strong>
           </label>
-          <input 
-            type="text" 
-            id="escrivao" 
+          <input
+            type="text"
+            id="escrivao"
+            name="escrivao"
             className="w-full p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             placeholder="Escrivão(ã)"
             value={data.escrivao || ''}
@@ -39,9 +41,10 @@ const DelegaciaSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
           <label htmlFor="policiaisCivis" className="block text-sm font-medium text-gray-700 mb-1">
             <strong>Policiais Civis:</strong>
           </label>
-          <input 
-            type="text" 
-            id="policiaisCivis" 
+          <input
+            type="text"
+            id="policiaisCivis"
+            name="policiaisCivis"
             className="w-full p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             placeholder="Nome dos Policiais Civis"
             value={data.policiaisCivis || ''}

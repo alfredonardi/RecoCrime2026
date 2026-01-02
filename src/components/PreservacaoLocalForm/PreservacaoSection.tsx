@@ -34,9 +34,10 @@ const PreservacaoSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
               <label htmlFor="responsavel" className="block text-sm font-medium text-gray-700 mb-4">
                 <strong>Responsável:</strong>
               </label>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 id="responsavel"
+                name="responsavel"
                 className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 value={data.responsavel || ''}
                 onChange={(e) => onChange('responsavel', e.target.value)}
