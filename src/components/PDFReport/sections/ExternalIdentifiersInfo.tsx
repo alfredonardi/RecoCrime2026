@@ -21,7 +21,7 @@ export const ExternalIdentifiersInfo: React.FC<{ data: Partial<FormData> }> = ({
   }
 
   return (
-    <>
+    <View style={styles.sectionContainer}>
       <Text style={styles.sectionTitle}>6iev. Identificadores Externos da Vítima</Text>
 
       {validTatuagens.length > 0 && (
@@ -55,6 +55,6 @@ export const ExternalIdentifiersInfo: React.FC<{ data: Partial<FormData> }> = ({
           ))}
         </>
       )}
-    </>
+    </View>
   );
 };

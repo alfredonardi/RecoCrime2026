@@ -19,9 +19,9 @@ export const TeamInfo: React.FC<{ data: FormData }> = ({ data }) => {
   }
 
   return (
-    <>
+    <View style={styles.sectionContainer}>
       <Text style={styles.sectionTitle}>2. Grupo Especializado em Assessoramento de Local de Crime (GEAcrim)</Text>
-      
+
       {hasValue(data.delegado) && (
         <View style={styles.row}>
           <Text style={styles.label}>Delegado(a):</Text>
@@ -63,6 +63,6 @@ export const TeamInfo: React.FC<{ data: FormData }> = ({ data }) => {
           <Text style={styles.value}>{data.papiloscopistas}</Text>
         </View>
       )}
-    </>
+    </View>
   );
 };

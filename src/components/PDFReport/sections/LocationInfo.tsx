@@ -16,9 +16,9 @@ export const LocationInfo: React.FC<{ data: FormData }> = ({ data }) => {
   if (!hasContent) return null;
 
   return (
-    <>
+    <View style={styles.sectionContainer}>
       <Text style={styles.sectionTitle}>5. Do Local dos Fatos</Text>
-      
+
       {data.area && (
         <View style={styles.row}>
           <Text style={styles.label}>Área:</Text>
@@ -88,6 +88,6 @@ export const LocationInfo: React.FC<{ data: FormData }> = ({ data }) => {
           <Text style={styles.multilineValue}>{data.informacoesPertinentesLocalFatos}</Text>
         </View>
       )}
-    </>
+    </View>
   );
 };

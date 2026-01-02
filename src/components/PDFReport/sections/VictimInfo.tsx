@@ -41,9 +41,9 @@ export const VictimInfo: React.FC<{ data: Partial<FormData> }> = ({ data }) => {
   }
 
   return (
-    <>
+    <View style={styles.sectionContainer}>
       <Text style={styles.sectionTitle}>6. Informações Importantes sobre a Vítima</Text>
-      
+
       {/* Ação da vítima */}
       {hasChanged(data.acaoVitima, 'string') && (
         <View style={styles.row}>
@@ -331,7 +331,7 @@ export const VictimInfo: React.FC<{ data: Partial<FormData> }> = ({ data }) => {
       )}
         </>
       )}
-    </>
+    </View>
   );
 };
 

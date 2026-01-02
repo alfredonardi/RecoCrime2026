@@ -14,9 +14,9 @@ export const FinalConsiderations: React.FC<{ data: FormData }> = ({ data }) => {
   }
 
   return (
-    <>
+    <View style={styles.sectionContainer}>
       <Text style={styles.sectionTitle}>9. Considerações Finais</Text>
-    
+
     {hasValue(data.investigacoesPreliminares) && (
       <>
         <Text style={styles.subsectionTitle}>Das investigações preliminares</Text>
@@ -34,6 +34,6 @@ export const FinalConsiderations: React.FC<{ data: FormData }> = ({ data }) => {
         </View>
       </>
     )}
-  </>
+  </View>
   );
 };

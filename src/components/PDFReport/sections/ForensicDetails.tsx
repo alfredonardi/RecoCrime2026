@@ -30,9 +30,9 @@ export const ForensicDetails: React.FC<{ data: FormData }> = ({ data }) => {
   }
 
   return (
-    <>
+    <View style={styles.sectionContainer}>
       <Text style={styles.sectionTitle}>7. Detalhes Forenses</Text>
-      
+
       {/* Detalhes Forenses do Óbito */}
       {(hasChanged(data.rigidez, 'string') || 
         hasChanged(data.hipotermia, 'string') || 
@@ -187,7 +187,7 @@ export const ForensicDetails: React.FC<{ data: FormData }> = ({ data }) => {
           </View>
         </>
       )}
-    </>
+    </View>
   );
 };
 

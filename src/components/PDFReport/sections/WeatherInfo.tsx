@@ -20,9 +20,9 @@ export const WeatherInfo: React.FC<{ data: FormData }> = ({ data }) => {
   }
 
   return (
-    <>
+    <View style={styles.sectionContainer}>
       <Text style={styles.sectionTitle}>3. Do Clima</Text>
-      
+
       {hasValue(data.periodo) && (
         <View style={styles.row}>
           <Text style={styles.label}>Período:</Text>
@@ -75,6 +75,6 @@ export const WeatherInfo: React.FC<{ data: FormData }> = ({ data }) => {
           <Text style={styles.value}>{data.umidadeAr}%</Text>
         </View>
       )}
-    </>
+    </View>
   );
 };

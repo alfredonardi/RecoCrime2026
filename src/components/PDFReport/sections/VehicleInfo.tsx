@@ -26,9 +26,9 @@ export const VehicleInfo: React.FC<{ data: Partial<FormData> }> = ({ data }) => 
   }
 
   return (
-    <>
+    <View style={styles.sectionContainer}>
       <Text style={styles.sectionTitle}>5v. Local Imediato Veículo</Text>
-      
+
       {hasChanged(data.localCorpo, 'string') && (
         <View style={styles.row}>
           <Text style={styles.label}>Local da vítima:</Text>
@@ -124,6 +124,6 @@ export const VehicleInfo: React.FC<{ data: Partial<FormData> }> = ({ data }) => 
           <Text style={styles.multilineValue}>{data.descricaoDanos}</Text>
         </View>
       )}
-    </>
+    </View>
   );
 };
