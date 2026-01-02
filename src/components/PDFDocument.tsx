@@ -9,7 +9,7 @@ import { FormData } from '../types';
 const styles = StyleSheet.create({
     page: {
         paddingTop: 165,        // Espaço para header + título com margem apropriada
-        paddingBottom: 80,      // Espaço para o footer (70px altura + 10px margem)
+        paddingBottom: 50,      // Espaço mínimo para o footer
         paddingLeft: 40,        // Margem lateral esquerda
         paddingRight: 40,       // Margem lateral direita
         fontFamily: 'Helvetica',
