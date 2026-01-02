@@ -16,9 +16,9 @@ export const ExternalLocationInfo: React.FC<{ data: FormData }> = ({ data }) => 
   if (!hasContent) return null;
 
   return (
-    <>
+    <View style={styles.sectionContainer}>
       <Text style={styles.sectionTitle}>5e. Local imediato externo</Text>
-      
+
       {hasValue(data.localEncontroCorpo) && (
         <View style={styles.row}>
           <Text style={styles.label}>Tipo de local:</Text>
@@ -74,6 +74,6 @@ export const ExternalLocationInfo: React.FC<{ data: FormData }> = ({ data }) => 
           )}
         </>
       )}
-    </>
+    </View>
   );
 };

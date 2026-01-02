@@ -22,7 +22,7 @@ export const AdditionalInfo: React.FC<{ data: Partial<FormData> }> = ({ data }) 
   }
 
   return (
-    <>
+    <View style={styles.sectionContainer}>
       <Text style={styles.sectionTitle}>8. Informações Adicionais</Text>
 
       {/* Apreensões */}
@@ -69,6 +69,6 @@ export const AdditionalInfo: React.FC<{ data: Partial<FormData> }> = ({ data }) 
           ))}
         </>
       )}
-    </>
+    </View>
   );
 };

@@ -28,9 +28,9 @@ export const InternalLocationInfo: React.FC<{ data: FormData }> = ({ data }) => 
   }
 
   return (
-    <>
+    <View style={styles.sectionContainer}>
       <Text style={styles.sectionTitle}>5i. Local imediato interno</Text>
-      
+
       {hasValue(data.tipoAmbiente) && (
         <View style={styles.row}>
           <Text style={styles.label}>Ambiente:</Text>
@@ -222,7 +222,7 @@ export const InternalLocationInfo: React.FC<{ data: FormData }> = ({ data }) => 
           <Text style={styles.value}>{data.informacoesPertinentesLocalInterno}</Text>
         </View>
       )}
-    </>
+    </View>
   );
 };
 

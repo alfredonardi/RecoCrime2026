@@ -10,6 +10,11 @@ export const styles = StyleSheet.create({
     wrap: {
         flexWrap: 'wrap',
     },
+    sectionContainer: {
+        width: '100%',
+        breakInside: 'avoid-page',
+        marginBottom: 6,
+    },
     sectionTitle: {
         fontSize: 11,
         fontFamily: 'Helvetica-Bold',

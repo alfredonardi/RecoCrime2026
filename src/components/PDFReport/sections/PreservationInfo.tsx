@@ -28,9 +28,9 @@ export const PreservationInfo: React.FC<{ data: FormData }> = ({ data }) => {
   }
 
   return (
-    <>
+    <View style={styles.sectionContainer}>
       <Text style={styles.sectionTitle}>4. Da Preservação do Local</Text>
-      
+
       {/* Estado da Vítima */}
       {hasValue(data.estadoVitima) && (
         <View style={styles.row}>
@@ -152,6 +152,6 @@ export const PreservationInfo: React.FC<{ data: FormData }> = ({ data }) => {
           )}
         </>
       )}
-    </>
+    </View>
   );
 };

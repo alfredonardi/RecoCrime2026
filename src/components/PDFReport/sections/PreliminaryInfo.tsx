@@ -33,9 +33,9 @@ export const PreliminaryInfo: React.FC<{ data: Partial<FormData> }> = ({ data })
   }
 
   return (
-    <>
+    <View style={styles.sectionContainer}>
       <Text style={styles.firstSectionTitle}>1. Informações Preliminares</Text>
-      
+
       {hasMainContent && (
         <>
           {hasValue(data.naturezaDelito) && (
@@ -108,6 +108,6 @@ export const PreliminaryInfo: React.FC<{ data: Partial<FormData> }> = ({ data })
           <CommunicationsInfo data={data} />
         </>
       )}
-    </>
+    </View>
   );
 };
