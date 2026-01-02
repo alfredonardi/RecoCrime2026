@@ -7,7 +7,7 @@ import PDFTitle from '../components/PDFReport/PDFTitle';
 
 const styles = StyleSheet.create({
   page: {
-    paddingTop: 210,      // Espaço extra para header + título e evitar sobreposição
+    paddingTop: 170,      // Espaço para header, título principal e margem de respiro
     paddingBottom: 90,    // Espaço para o footer (70px altura + 20px margem)
     paddingLeft: 40,      // Margem lateral esquerda
     paddingRight: 40,     // Margem lateral direita
