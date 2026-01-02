@@ -13,6 +13,7 @@ const VeiculoIdentificacaoSection: React.FC<FormSectionProps> = ({ data, onChang
           </label>
           <select
             id="tipoVeiculo"
+            name="tipoVeiculo"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.tipoVeiculo || ''}
             onChange={(e) => onChange('tipoVeiculo', e.target.value)}
@@ -37,6 +38,8 @@ const VeiculoIdentificacaoSection: React.FC<FormSectionProps> = ({ data, onChang
           <div>
             <input
               type="text"
+              id="especificacaoTipoVeiculo"
+              name="especificacaoTipoVeiculo"
               className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               placeholder="Especifique o tipo de veículo"
               value={data.especificacaoTipoVeiculo || ''}
@@ -51,6 +54,7 @@ const VeiculoIdentificacaoSection: React.FC<FormSectionProps> = ({ data, onChang
           </label>
           <textarea
             id="marcaVeiculo"
+            name="marcaVeiculo"
             className="w-full h-[92px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             placeholder="Descreva a marca do veículo (ex: Volkswagen, Fiat, Honda, etc)"
             value={data.marcaVeiculo || ''}
@@ -64,6 +68,7 @@ const VeiculoIdentificacaoSection: React.FC<FormSectionProps> = ({ data, onChang
           </label>
           <textarea
             id="modeloVeiculo"
+            name="modeloVeiculo"
             className="w-full h-[92px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             placeholder="Descreva o modelo do veículo (ex: Gol, Palio, Civic, etc)"
             value={data.modeloVeiculo || ''}
@@ -78,6 +83,7 @@ const VeiculoIdentificacaoSection: React.FC<FormSectionProps> = ({ data, onChang
           <input
             type="text"
             id="placa"
+            name="placa"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             maxLength={8}
             placeholder="XXX-0000"

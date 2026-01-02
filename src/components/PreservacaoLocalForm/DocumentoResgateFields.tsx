@@ -30,6 +30,7 @@ const DocumentoResgateFields: React.FC<FormSectionProps> = ({ data, onChange }) 
       <input
         type="text"
         id="numeroDocumentoResgate"
+        name="numeroDocumentoResgate"
         className="w-full p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         value={data.numeroDocumentoResgate || ''}
         onChange={(e) => onChange('numeroDocumentoResgate', e.target.value)}
@@ -42,6 +43,7 @@ const DocumentoResgateFields: React.FC<FormSectionProps> = ({ data, onChange }) 
         <div className="space-y-3">
           <select
             id="tipoVtrResgate"
+            name="tipoVtrResgate"
             className="w-full p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.tipoVtrResgate || ''}
             onChange={(e) => onChange('tipoVtrResgate', e.target.value)}
@@ -54,6 +56,7 @@ const DocumentoResgateFields: React.FC<FormSectionProps> = ({ data, onChange }) 
           <input
             type="text"
             id="vtrNumeroResgate"
+            name="vtrNumeroResgate"
             className="w-full p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             placeholder="Número do patrimônio ou placa de identificação veicular"
             value={data.vtrNumeroResgate || ''}

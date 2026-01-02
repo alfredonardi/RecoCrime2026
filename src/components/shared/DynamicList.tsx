@@ -58,6 +58,7 @@ const DynamicList = <T extends DynamicItem>({
               ) : (
                 <input
                   type="text"
+                  id={`${field.name}-${index}`}
                   className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   placeholder={field.placeholder}
                   value={String(item[field.name] || '')}

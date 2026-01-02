@@ -12,6 +12,7 @@ const PosicaoCorpoSection: React.FC<FormSectionProps> = ({ data, onChange }) => 
           </label>
           <select
             id="posicaoCorpo"
+            name="posicaoCorpo"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.posicaoCorpo || ''}
             onChange={(e) => onChange('posicaoCorpo', e.target.value)}
@@ -45,6 +46,7 @@ const PosicaoCorpoSection: React.FC<FormSectionProps> = ({ data, onChange }) => 
           </label>
           <select
             id="posicaoCorpo1"
+            name="posicaoCorpo1"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.posicaoCorpo1 || ''}
             onChange={(e) => onChange('posicaoCorpo1', e.target.value)}
@@ -59,6 +61,8 @@ const PosicaoCorpoSection: React.FC<FormSectionProps> = ({ data, onChange }) => 
           <div>
             <input
               type="text"
+              id="explicacaoPosicao"
+              name="explicacaoPosicao"
               className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               placeholder="Explique a posição incomum ou não natural"
               value={data.explicacaoPosicao || ''}

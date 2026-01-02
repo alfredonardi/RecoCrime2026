@@ -8,6 +8,7 @@ const IluminacaoSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
       
       <select
         id="tipoIluminacao"
+        name="tipoIluminacao"
         className="normal-input"
         value={data.tipoIluminacao || ''}
         onChange={(e) => onChange('tipoIluminacao', e.target.value)}
@@ -25,6 +26,7 @@ const IluminacaoSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
           <input
             type="text"
             id="fonteIluminacao"
+            name="fonteIluminacao"
             className="medium-input"
             value={data.fonteIluminacao || ''}
             onChange={(e) => onChange('fonteIluminacao', e.target.value)}

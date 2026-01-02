@@ -11,6 +11,8 @@ const EstadoRigidezSection: React.FC<FormSectionProps> = ({ data, onChange }) =>
             <strong>Estado de rigidez:</strong>
           </label>
           <select
+            id="rigidez"
+            name="rigidez"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.rigidez || ''}
             onChange={(e) => onChange('rigidez', e.target.value)}
@@ -27,6 +29,7 @@ const EstadoRigidezSection: React.FC<FormSectionProps> = ({ data, onChange }) =>
           </label>
           <select
             id="hipotermiaSelect"
+            name="hipotermiaSelect"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.hipotermia || ''}
             onChange={(e) => onChange('hipotermia', e.target.value)}
@@ -44,6 +47,7 @@ const EstadoRigidezSection: React.FC<FormSectionProps> = ({ data, onChange }) =>
           <input
             type="text"
             id="tempoMorte"
+            name="tempoMorte"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             placeholder="ex: 3 a 5 horas"
             value={data.tempoMorte || ''}

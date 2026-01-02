@@ -13,6 +13,7 @@ const TemperaturaSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
         </label>
         <select
           id="temperatura"
+          name="temperatura"
           className="w-full h-[42px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           value={data.temperatura || ''}
           onChange={(e) => onChange('temperatura', e.target.value)}
@@ -30,6 +31,7 @@ const TemperaturaSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
         </label>
         <select
           id="sensacaoTermica"
+          name="sensacaoTermica"
           className="w-full h-[42px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           value={data.sensacaoTermica || ''}
           onChange={(e) => onChange('sensacaoTermica', e.target.value)}
@@ -47,6 +49,7 @@ const TemperaturaSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
         </label>
         <select
           id="umidadeAr"
+          name="umidadeAr"
           className="w-full h-[42px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           value={data.umidadeAr || ''}
           onChange={(e) => onChange('umidadeAr', e.target.value)}

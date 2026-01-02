@@ -13,6 +13,7 @@ const VestigiosSangueSection: React.FC<FormSectionProps> = ({ data, onChange }) 
           </label>
           <select
             id="vestigiosSangue"
+            name="vestigiosSangue"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.vestigiosSangue || ''}
             onChange={(e) => onChange('vestigiosSangue', e.target.value)}
@@ -31,6 +32,7 @@ const VestigiosSangueSection: React.FC<FormSectionProps> = ({ data, onChange }) 
               </label>
               <select
                 id="quantidade"
+                name="quantidade"
                 className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 value={data.quantidadeSangue || ''}
                 onChange={(e) => onChange('quantidadeSangue', e.target.value)}

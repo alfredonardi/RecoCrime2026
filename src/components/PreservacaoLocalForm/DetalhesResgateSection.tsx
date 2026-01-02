@@ -14,6 +14,7 @@ const DetalhesResgateSection: React.FC<FormSectionProps> = ({ data, onChange }) 
           </label>
           <select
             id="tentativaResgate"
+            name="tentativaResgate"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.tentativaResgate || ''}
             onChange={(e) => onChange('tentativaResgate', e.target.value)}

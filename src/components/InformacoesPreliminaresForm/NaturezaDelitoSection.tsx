@@ -5,8 +5,9 @@ const NaturezaDelitoSection: React.FC<FormSectionProps> = ({ data, onChange }) =
   return (
     <fieldset className="form-group">
       <legend className="mb-4"><strong>Natureza do delito</strong></legend>
-      <select 
-        id="naturezaDelitoSelect" 
+      <select
+        id="naturezaDelitoSelect"
+        name="naturezaDelitoSelect"
         className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         value={data.naturezaDelito || ''}
         onChange={(e) => onChange('naturezaDelito', e.target.value)}
@@ -20,9 +21,10 @@ const NaturezaDelitoSection: React.FC<FormSectionProps> = ({ data, onChange }) =
       </select>
       
       {data.naturezaDelito === 'outros' && (
-        <input 
-          type="text" 
-          id="especificacao-naturezaDelito" 
+        <input
+          type="text"
+          id="especificacao-naturezaDelito"
+          name="especificacao-naturezaDelito"
           className="mt-2 w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           value={data.especificacaoNaturezaDelito || ''}
           onChange={(e) => onChange('especificacaoNaturezaDelito', e.target.value)}

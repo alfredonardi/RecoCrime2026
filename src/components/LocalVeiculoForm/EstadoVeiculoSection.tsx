@@ -10,6 +10,8 @@ const EstadoVeiculoSection: React.FC<FormSectionProps> = ({ data, onChange }) =>
         <label>
           <input
             type="checkbox"
+            id="veiculoTrancado"
+            name="veiculoTrancado"
             checked={data.veiculoTrancado || false}
             onChange={(e) => onChange('veiculoTrancado', e.target.checked)}
           />
@@ -19,6 +21,8 @@ const EstadoVeiculoSection: React.FC<FormSectionProps> = ({ data, onChange }) =>
         <label>
           <input
             type="checkbox"
+            id="veiculoDanificado"
+            name="veiculoDanificado"
             checked={data.veiculoDanificado || false}
             onChange={(e) => onChange('veiculoDanificado', e.target.checked)}
           />
@@ -31,6 +35,7 @@ const EstadoVeiculoSection: React.FC<FormSectionProps> = ({ data, onChange }) =>
           <label htmlFor="descricaoDanos"><strong>Descrição dos danos:</strong></label>
           <textarea
             id="descricaoDanos"
+            name="descricaoDanos"
             className="large-input"
             value={data.descricaoDanos || ''}
             onChange={(e) => onChange('descricaoDanos', e.target.value)}

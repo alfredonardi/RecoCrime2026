@@ -18,6 +18,7 @@ const PeriodoLuzSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
       <div className="space-y-3">
         <select
           id="periodo"
+          name="periodo"
           className="w-full h-[42px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           value={data.periodo || ''}
           onChange={handlePeriodoChange}
@@ -32,6 +33,7 @@ const PeriodoLuzSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
         {data.periodo && (
           <select
             id="luz"
+            name="luz"
             className="w-full h-[42px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.luz || ''}
             onChange={handleLuzChange}

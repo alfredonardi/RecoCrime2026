@@ -33,6 +33,7 @@ const CheckboxWithSpecification: React.FC<CheckboxWithSpecificationProps> = memo
         <input
           type="checkbox"
           id={id}
+          name={id}
           checked={checked}
           onChange={handleCheckboxChange}
           className="mt-1 h-4 w-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500"
@@ -45,6 +46,8 @@ const CheckboxWithSpecification: React.FC<CheckboxWithSpecificationProps> = memo
       {showSpecification && onSpecificationChange && (
         <input
           type="text"
+          id={`${id}-specification`}
+          name={`${id}-specification`}
           className="ml-4 flex-1 h-[42px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           placeholder="Especifique"
           value={specification || ''}

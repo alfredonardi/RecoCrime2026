@@ -9,6 +9,7 @@ const VisibilidadeSection: React.FC<FormSectionProps> = ({ data, onChange }) => 
       </label>
       <select
         id="visibilidade"
+        name="visibilidade"
         className="w-full h-[42px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         value={data.visibilidade || ''}
         onChange={(e) => onChange('visibilidade', e.target.value)}

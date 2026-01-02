@@ -11,9 +11,10 @@ const LocalFatosSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
       <legend><strong>Local dos Fatos</strong></legend>
       
       <label htmlFor="localFatos"><strong>Endereço:</strong></label>
-      <input 
-        type="text" 
-        id="localFatos" 
+      <input
+        type="text"
+        id="localFatos"
+        name="localFatos"
         className="w-full h-[42px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 mb-4"
         value={data.localFatos || ''}
         onChange={(e) => onChange('localFatos', e.target.value)}
@@ -21,9 +22,10 @@ const LocalFatosSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
       />
 
       <label htmlFor="pontoReferencia"><strong>Ponto de referência:</strong></label>
-      <input 
-        type="text" 
-        id="pontoReferencia" 
+      <input
+        type="text"
+        id="pontoReferencia"
+        name="pontoReferencia"
         className="w-full h-[42px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 mb-4"
         placeholder="Especifique"
         value={data.pontoReferencia || ''}
@@ -32,8 +34,9 @@ const LocalFatosSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
       />
 
       <label htmlFor="tipoLocal"><strong>Tipo de local:</strong></label>
-      <select 
-        id="tipoLocal" 
+      <select
+        id="tipoLocal"
+        name="tipoLocal"
         className="w-full h-[42px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 mb-4"
         required
         value={data.tipoLocal || ''}
@@ -45,8 +48,9 @@ const LocalFatosSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
       </select>
 
       <label htmlFor="circunscricaoPolicial"><strong>Circunscrição:</strong></label>
-      <select 
-        id="circunscricaoPolicial" 
+      <select
+        id="circunscricaoPolicial"
+        name="circunscricaoPolicial"
         className="w-full h-[42px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 mb-4"
         value={data.circunscricaoPolicial || ''}
         onChange={(e) => onChange('circunscricaoPolicial', e.target.value)}
@@ -60,8 +64,9 @@ const LocalFatosSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
       <div className="mb-4">
         <label htmlFor="boDPInfo"><strong>Boletim de Ocorrência lavrado no:</strong></label>
         <div className="grid grid-cols-2 gap-3 mt-1">
-          <select 
-            id="boDP" 
+          <select
+            id="boDP"
+            name="boDP"
             className="w-full h-[42px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.boDP || ''}
             onChange={(e) => onChange('boDP', e.target.value)}
@@ -71,10 +76,11 @@ const LocalFatosSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
               <option key={dp.value} value={dp.value}>{dp.label}</option>
             ))}
           </select>
-          <input 
-            type="text" 
-            id="boDPInfo" 
-            maxLength={11} 
+          <input
+            type="text"
+            id="boDPInfo"
+            name="boDPInfo"
+            maxLength={11}
             className="w-full h-[42px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             placeholder="XX1234/25"
             value={data.boDPInfo || ''}
@@ -86,8 +92,9 @@ const LocalFatosSection: React.FC<FormSectionProps> = ({ data, onChange }) => {
 
       <div>
         <label htmlFor="boDHPP"><strong>Atendimento pelo DHPP</strong></label>
-        <select 
-          id="boDHPP" 
+        <select
+          id="boDHPP"
+          name="boDHPP"
           className="w-full h-[42px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           value={data.boDHPP || ''}
           onChange={(e) => onChange('boDHPP', e.target.value)}

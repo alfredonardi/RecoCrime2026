@@ -27,6 +27,7 @@ const TipoResgateFields: React.FC<FormSectionProps> = ({ data, onChange }) => {
       <input
         type="text"
         id="encarregado"
+        name="encarregado"
         className="large-input"
         value={data.encarregado || ''}
         onChange={(e) => onChange('encarregado', e.target.value)}

@@ -29,6 +29,7 @@ const DateTimeInput: React.FC<DateTimeInputProps> = ({
           <input
             type="date"
             id={dateId}
+            name={dateId}
             className="w-full p-2 border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
             value={dateValue}
             onChange={(e) => onDateChange(e.target.value)}
@@ -40,6 +41,7 @@ const DateTimeInput: React.FC<DateTimeInputProps> = ({
           <input
             type="time"
             id={timeId}
+            name={timeId}
             className="w-full p-2 border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
             value={timeValue}
             onChange={(e) => onTimeChange(e.target.value)}

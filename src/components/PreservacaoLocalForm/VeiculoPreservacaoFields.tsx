@@ -10,6 +10,7 @@ const VeiculoPreservacaoFields: React.FC<FormSectionProps> = ({ data, onChange }
       <div className="space-y-3">
         <select
           id="tipovtrNumero"
+          name="tipovtrNumero"
           className="w-full p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           value={data.tipoVtrNumero || ''}
           onChange={(e) => onChange('tipoVtrNumero', e.target.value)}
@@ -22,6 +23,7 @@ const VeiculoPreservacaoFields: React.FC<FormSectionProps> = ({ data, onChange }
         <input
           type="text"
           id="vtrNumero"
+          name="vtrNumero"
           className="w-full p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           placeholder="Número do patrimônio ou placa de identificação veicular"
           value={data.vtrNumero || ''}

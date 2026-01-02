@@ -10,8 +10,9 @@ const EstadoVitimaSection: React.FC<FormSectionProps> = ({ data, onChange }) => 
           <label htmlFor="estadoVitima" className="block text-sm font-medium text-gray-700 mb-4">
             <strong>Estado:</strong>
           </label>
-          <select 
-            id="estadoVitima" 
+          <select
+            id="estadoVitima"
+            name="estadoVitima"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.estadoVitima || ''}
             onChange={(e) => onChange('estadoVitima', e.target.value)}

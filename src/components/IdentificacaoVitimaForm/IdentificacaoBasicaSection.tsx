@@ -12,6 +12,7 @@ const IdentificacaoBasicaSection: React.FC<FormSectionProps> = ({ data, onChange
           </label>
           <select
             id="identificacaoVitima"
+            name="identificacaoVitima"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.identificacaoVitima || ''}
             onChange={(e) => onChange('identificacaoVitima', e.target.value)}
@@ -29,6 +30,7 @@ const IdentificacaoBasicaSection: React.FC<FormSectionProps> = ({ data, onChange
             </label>
             <textarea
               id="motivo"
+              name="motivo"
               className="w-full h-[92px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               placeholder="Descreva o motivo"
               value={data.motivo || ''}

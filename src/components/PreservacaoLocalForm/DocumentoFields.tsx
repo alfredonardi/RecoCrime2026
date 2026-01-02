@@ -28,6 +28,7 @@ const DocumentoFields: React.FC<FormSectionProps> = ({ data, onChange }) => {
       <input
         type="text"
         id="documentoNumero"
+        name="documentoNumero"
         className="normal-input"
         value={data.documentoNumero || ''}
         onChange={(e) => onChange('documentoNumero', e.target.value)}

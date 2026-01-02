@@ -31,9 +31,10 @@ const DadosPessoaisSection: React.FC<FormSectionProps> = ({ data, onChange }) =>
           <label htmlFor="nome" className="block text-sm font-medium text-gray-700 mb-1">
             <strong>Nome:</strong>
           </label>
-          <input 
-            type="text" 
-            id="nome" 
+          <input
+            type="text"
+            id="nome"
+            name="nome"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.nome || ''}
             onChange={(e) => onChange('nome', e.target.value)}
@@ -44,9 +45,10 @@ const DadosPessoaisSection: React.FC<FormSectionProps> = ({ data, onChange }) =>
           <label htmlFor="nomeSocial" className="block text-sm font-medium text-gray-700 mb-1">
             <strong>Nome social:</strong>
           </label>
-          <input 
-            type="text" 
-            id="nomeSocial" 
+          <input
+            type="text"
+            id="nomeSocial"
+            name="nomeSocial"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.nomeSocial || ''}
             onChange={(e) => onChange('nomeSocial', e.target.value)}
@@ -60,6 +62,7 @@ const DadosPessoaisSection: React.FC<FormSectionProps> = ({ data, onChange }) =>
           <input
             type="text"
             id="vulgo"
+            name="vulgo"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.vulgo || ''}
             onChange={(e) => onChange('vulgo', e.target.value)}
@@ -73,6 +76,7 @@ const DadosPessoaisSection: React.FC<FormSectionProps> = ({ data, onChange }) =>
           <input
             type="text"
             id="cpf"
+            name="cpf"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.cpf || ''}
             onChange={(e) => onChange('cpf', e.target.value)}
@@ -87,6 +91,7 @@ const DadosPessoaisSection: React.FC<FormSectionProps> = ({ data, onChange }) =>
           <input
             type="text"
             id="rg"
+            name="rg"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.rg || ''}
             onChange={(e) => onChange('rg', e.target.value)}
@@ -99,6 +104,7 @@ const DadosPessoaisSection: React.FC<FormSectionProps> = ({ data, onChange }) =>
           </label>
           <select
             id="estadoCivil"
+            name="estadoCivil"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.estadoCivil || ''}
             onChange={(e) => onChange('estadoCivil', e.target.value)}
@@ -119,6 +125,7 @@ const DadosPessoaisSection: React.FC<FormSectionProps> = ({ data, onChange }) =>
           <input
             type="date"
             id="dataNascimento"
+            name="dataNascimento"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.dataNascimento || ''}
             onChange={(e) => handleDateChange(e.target.value)}
@@ -132,6 +139,7 @@ const DadosPessoaisSection: React.FC<FormSectionProps> = ({ data, onChange }) =>
           <input
             type="number"
             id="idade"
+            name="idade"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.idade || ''}
             onChange={handleAgeChange}
@@ -147,6 +155,7 @@ const DadosPessoaisSection: React.FC<FormSectionProps> = ({ data, onChange }) =>
           <input
             type="text"
             id="vitimaEndereco"
+            name="vitimaEndereco"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.vitimaEndereco || ''}
             onChange={(e) => onChange('vitimaEndereco', e.target.value)}
@@ -160,6 +169,7 @@ const DadosPessoaisSection: React.FC<FormSectionProps> = ({ data, onChange }) =>
           <input
             type="text"
             id="pai"
+            name="pai"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.pai || ''}
             onChange={(e) => onChange('pai', e.target.value)}
@@ -173,6 +183,7 @@ const DadosPessoaisSection: React.FC<FormSectionProps> = ({ data, onChange }) =>
           <input
             type="text"
             id="mae"
+            name="mae"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.mae || ''}
             onChange={(e) => onChange('mae', e.target.value)}
@@ -185,6 +196,7 @@ const DadosPessoaisSection: React.FC<FormSectionProps> = ({ data, onChange }) =>
           </label>
           <select
             id="naturalidadeEstado"
+            name="naturalidadeEstado"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.naturalidadeEstado || ''}
             onChange={(e) => onChange('naturalidadeEstado', e.target.value)}
@@ -227,6 +239,7 @@ const DadosPessoaisSection: React.FC<FormSectionProps> = ({ data, onChange }) =>
           <input
             type="text"
             id="naturalidadeCidade"
+            name="naturalidadeCidade"
             className="w-full h-[46px] p-3 border rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={data.naturalidadeCidade || ''}
             onChange={(e) => onChange('naturalidadeCidade', e.target.value)}
