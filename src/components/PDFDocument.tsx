@@ -14,10 +14,6 @@ const styles = StyleSheet.create({
         paddingRight: 40,       // Margem lateral direita
         fontFamily: 'Helvetica',
         position: 'relative'
-    },
-    content: {
-        flex: 1,
-        flexGrow: 1
     }
 });
 
@@ -31,9 +27,7 @@ const PDFDocument: React.FC<PDFDocumentProps> = ({ data }) => {
             <Page size="A4" style={styles.page}>
                 <PDFHeader />
                 <PDFTitle />
-                <View style={styles.content}>
-                    <PDFContent data={data} />
-                </View>
+                <PDFContent data={data} />
                 <PDFFooter />
             </Page>
         </Document>
