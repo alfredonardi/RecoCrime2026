@@ -4,9 +4,8 @@ export const styles = StyleSheet.create({
     section: {
         margin: 6,
         padding: 6,
-        flexGrow: 1,
         width: '100%',
-        breakInside: 'avoid',
+        flexDirection: 'column',
     },
     wrap: {
         flexWrap: 'wrap',
