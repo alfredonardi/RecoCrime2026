@@ -32,7 +32,7 @@ const PDFDocument: React.FC<PDFDocumentProps> = ({ data }) => {
                 <PDFHeader />
                 <PDFTitle />
                 <View style={styles.content}>
-                    <PDFContent data={data} wrap />
+                    <PDFContent data={data} />
                 </View>
                 <PDFFooter />
             </Page>
