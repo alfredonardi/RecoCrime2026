@@ -1,5 +1,5 @@
 import React from 'react';
-import { Document, Page, View, StyleSheet } from '@react-pdf/renderer';
+import { Document, Page, StyleSheet } from '@react-pdf/renderer';
 import PDFHeader from './PDFReport/PDFHeader';
 import PDFContent from './PDFReport/PDFContent';
 import PDFFooter from './PDFReport/PDFFooter';
